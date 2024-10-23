@@ -1,11 +1,15 @@
 package com.example.uts_lec
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AlertDialog
+import com.example.uts_lec.R
+
 
 class MenuActivity : ComponentActivity() {
 
@@ -16,7 +20,7 @@ class MenuActivity : ComponentActivity() {
         setContentView(R.layout.activity_menu)
 
         // Referensi ke Gambar Profil
-        val profileImage: ImageView = findViewById(R.id.profileImage)
+        val profileImage: ImageView = findViewById(R.id.overlay_image)
         profileImage.setOnClickListener {
             // Aksi saat gambar profil diklik
             Toast.makeText(this, "Profil diklik", Toast.LENGTH_SHORT).show()
@@ -31,16 +35,17 @@ class MenuActivity : ComponentActivity() {
         }
 
         // Referensi ke Ikon Pesan
-        val messageIcon: ImageView = findViewById(R.id.messageIcon)
+        val messageIcon: View = findViewById(R.id.messageIcon)
         messageIcon.setOnClickListener {
             // Aksi saat ikon pesan diklik
             Toast.makeText(this, "Message Icon Clicked!", Toast.LENGTH_SHORT).show()
             // Anda bisa menambahkan intent ke halaman pesan jika diinginkan
         }
 
-        // Referensi ke input pesan dan tombol kirim pesan
+        // Referensi ke input pesan dan
+        // tombol kirim pesan
         val messageInput: EditText = findViewById(R.id.messageInput)
-        val sendMessageIcon: ImageView = findViewById(R.id.sendMessageIcon)
+        val sendMessageIcon: View = findViewById(R.id.sendMessageIcon)
 
         sendMessageIcon.setOnClickListener {
             val message = messageInput.text.toString().trim()
@@ -56,12 +61,24 @@ class MenuActivity : ComponentActivity() {
             }
         }
 
-        // Referensi ke Emoji Icon
-        val emojiIcon: ImageView = findViewById(R.id.emojiIcon)
-        emojiIcon.setOnClickListener {
-            // Aksi saat ikon emoji diklik
-            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
-            // Tambahkan logika yang sesuai untuk emoji jika diperlukan
+        val image1 = findViewById<ImageView>(R.id.image1)
+        val image2 = findViewById<ImageView>(R.id.image2)
+        val image3 = findViewById<ImageView>(R.id.image3)
+
+        image1.setOnClickListener {
+            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
+
+        image2.setOnClickListener {
+            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
+        }
+
+        image3.setOnClickListener {
+            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun showPopup(s: String) {
+
     }
 }
