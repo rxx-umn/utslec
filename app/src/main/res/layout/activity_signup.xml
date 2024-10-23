@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#3D2E2E"
+    android:background="@drawable/gradient_background"
     android:gravity="center_horizontal"
     android:weightSum="1">
 
@@ -166,10 +166,7 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.4"/>
+
 
     <!-- Tombol Sign Up -->
     <Button
@@ -177,6 +174,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:background="@drawable/rounded_button"
-        android:textColor="#ffffff"/>
+        android:background="@drawable/glass_button"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

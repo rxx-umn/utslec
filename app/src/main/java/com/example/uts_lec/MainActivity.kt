@@ -3,15 +3,18 @@ package com.example.uts_lec
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import android.content.Intent
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ClickableSpan
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.activity.ComponentActivity
+import android.graphics.Typeface
+import android.graphics.Color
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +29,14 @@ class MainActivity : ComponentActivity() {
         val textView3: TextView = findViewById(R.id.textView3)
 
         // Terapkan font custom ke TextView
-        val customFont = ResourcesCompat.getFont(this, R.font.sora)
-        if (customFont != null) {
-            textView1.typeface = customFont
-            textView2.typeface = customFont
-            textView3.typeface = customFont
+        val regularFont = ResourcesCompat.getFont(this, R.font.sora)
+        val boldFont = ResourcesCompat.getFont(this, R.font.sora_bold)
+
+        // Mengatur font regular untuk TextView
+        if (regularFont != null) {
+            textView1.typeface = boldFont
+            textView2.typeface = regularFont
+            textView3.typeface = regularFont // Mengatur font regular untuk textView3
         }
 
         // Membuat teks "Already registered? Sign In"
@@ -39,6 +45,12 @@ class MainActivity : ComponentActivity() {
         // Membuat SpannableString
         val spannableString = SpannableString(text)
 
+        // Mengatur span untuk "Sign In"
+        val startIndex = text.indexOf("Sign In")
+        val endIndex = startIndex + "Sign In".length
+
+        spannableString.setSpan(ForegroundColorSpan(Color.parseColor("#B3FFF6EF")), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
         // Membuat ClickableSpan untuk teks "Sign In"
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
@@ -46,10 +58,16 @@ class MainActivity : ComponentActivity() {
                 val intent = Intent(this@MainActivity, SignInActivity::class.java)
                 startActivity(intent)
             }
+
+            override fun updateDrawState(ds: android.text.TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true // Menambahkan garis bawah jika diinginkan
+            }
         }
 
-        // Set span hanya untuk teks "Sign In"
-        spannableString.setSpan(clickableSpan, 19, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        // Set span untuk warna dan bold
+        spannableString.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(StyleSpan(Typeface.BOLD), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         // Set spannableString ke TextView
         textView3.text = spannableString
@@ -64,6 +82,5 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-        //test1
     }
 }
