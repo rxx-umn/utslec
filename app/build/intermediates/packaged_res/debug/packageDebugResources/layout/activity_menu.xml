@@ -1,0 +1,192 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientbackgorund">
+
+    <!-- Bagian Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="38dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="16dp">
+
+        <!-- FrameLayout untuk Gambar Profil -->
+        <FrameLayout
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="63dp">
+
+            <!-- Gambar Profil Lingkaran -->
+            <ImageView
+                android:id="@+id/circle_shape"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_shape"
+                android:scaleType="centerCrop" />
+
+            <!-- Gambar Overlay di Atas Lingkaran -->
+            <ImageView
+                android:id="@+id/overlay_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/user"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <!-- Tombol Everyone -->
+        <Button
+            android:id="@+id/everyoneButton"
+            android:layout_width="149dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="73dp"
+            android:background="@drawable/roundbutton"
+            android:text="Everyone"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"/>
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp">
+
+            <View
+                android:id="@+id/messageIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_shape" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_message"
+                app:tint="#FFFFFF"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="38dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample_image"
+            app:shapeAppearanceOverlay="@style/roundedImage" />
+
+        <TextView
+            android:id="@+id/postCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/roundtext"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="Console nih brok!"
+            android:textAllCaps="false"
+            android:textColor="#00072D"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <!-- Kolom Pesan di Bawah -->
+    <LinearLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="18dp">
+
+        <!-- Kontainer untuk EditText dan Gambar -->
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundbutton"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <!-- Kolom Pesan -->
+            <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Send message..."
+                android:textColorHint="#B3FFF6EF"
+                android:paddingLeft="18dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <!-- Gambar yang bisa ditekan - Ikon 1 -->
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_api"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- Gambar yang bisa ditekan - Ikon 2 -->
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_cry"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- Gambar yang bisa ditekan - Ikon 3 -->
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_skull"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- Tombol Kirim -->
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp">
+
+            <View
+                android:id="@+id/sendMessageIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_shape" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_send"
+                app:tint="#FFFFFF"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

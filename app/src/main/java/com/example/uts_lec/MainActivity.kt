@@ -82,6 +82,5 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

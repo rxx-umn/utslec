@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="overlay_image" type="id" />
+    <item name="circle_shape" type="id" />
+    <item name="everyoneButton" type="id" />
+    <item name="messageIcon" type="id" />
+    <item name="postImage" type="id" />
+    <item name="postCaption" type="id" />
+    <item name="messageLayout" type="id" />
+    <item name="messageInput" type="id" />
+    <item name="image1" type="id" />
+    <item name="image2" type="id" />
+    <item name="image3" type="id" />
+    <item name="sendMessageIcon" type="id" />
+</resources>
