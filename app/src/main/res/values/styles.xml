@@ -1,3 +1,5 @@
 <resources>
-
+    <style name="roundedImage">
+        <item name="cornerSize">28dp</item>
+    </style>
 </resources>

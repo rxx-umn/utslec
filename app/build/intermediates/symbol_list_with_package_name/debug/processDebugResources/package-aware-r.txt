@@ -2884,6 +2884,8 @@ drawable design_snackbar_background
 drawable gift
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradientbackgorund
+drawable ic_api
 drawable ic_arrow_back_black_24
 drawable ic_back_arrow
 drawable ic_calendar
@@ -2895,6 +2897,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_cry
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2908,6 +2911,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable ic_send
+drawable ic_skull
 drawable ic_visibility
 drawable ic_visibility_off
 drawable internet
@@ -2984,9 +2988,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable roundbutton
 drawable rounded_background
 drawable rounded_button
 drawable rounded_edittext
+drawable rounded_image
+drawable roundtext
 drawable sample_image
 drawable scale_calendar
 drawable test_level_drawable
@@ -3107,6 +3114,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id circle_shape
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3162,7 +3170,6 @@ id edit_text_id
 id elastic
 id emailInput
 id embed
-id emojiIcon
 id end
 id endToStart
 id enterAlways
@@ -3208,6 +3215,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id image1
+id image2
+id image3
 id indeterminate
 id info
 id inspection_slot_table_set
@@ -3257,6 +3267,7 @@ id matrix
 id message
 id messageIcon
 id messageInput
+id messageLayout
 id middle
 id mini
 id month_grid
@@ -3309,6 +3320,7 @@ id off
 id on
 id outline
 id outward
+id overlay_image
 id packed
 id parallax
 id parent
@@ -3328,7 +3340,6 @@ id postCaption
 id postImage
 id postLayout
 id pressed
-id profileImage
 id progress_circular
 id progress_horizontal
 id radio
@@ -5066,6 +5077,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style roundedImage
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
