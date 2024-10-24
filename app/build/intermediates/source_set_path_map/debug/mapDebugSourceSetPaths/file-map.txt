@@ -56,10 +56,10 @@ com.example.uts_lec.app-core-1.13.1-54 C:\Users\Izdihar Dhawy Tasdid\.gradle\cac
 com.example.uts_lec.app-coordinatorlayout-1.1.0-55 C:\Users\Izdihar Dhawy Tasdid\.gradle\caches\transforms-4\f0a3217f54206a22266c0e177affd57d\transformed\coordinatorlayout-1.1.0\res
 com.example.uts_lec.app-drawerlayout-1.1.1-56 C:\Users\Izdihar Dhawy Tasdid\.gradle\caches\transforms-4\f1b1db26865b0fedc5ee9624d0076a4e\transformed\drawerlayout-1.1.1\res
 com.example.uts_lec.app-annotation-experimental-1.4.0-57 C:\Users\Izdihar Dhawy Tasdid\.gradle\caches\transforms-4\fdc2cc0dcca441dba695e352659a94fc\transformed\annotation-experimental-1.4.0\res
-com.example.uts_lec.app-google-services-58 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\build\generated\res\google-services\debug
-com.example.uts_lec.app-resValues-59 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\build\generated\res\resValues\debug
-com.example.uts_lec.app-packageDebugResources-60 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.uts_lec.app-packageDebugResources-61 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.uts_lec.app-debug-62 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.uts_lec.app-debug-63 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\src\debug\res
-com.example.uts_lec.app-main-64 D:\Tugas\Semester 5\Mobile Application Programming\UTS\utslec\app\src\main\res
+com.example.uts_lec.app-google-services-58 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\build\generated\res\google-services\debug
+com.example.uts_lec.app-resValues-59 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\build\generated\res\resValues\debug
+com.example.uts_lec.app-packageDebugResources-60 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.uts_lec.app-packageDebugResources-61 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.uts_lec.app-debug-62 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.uts_lec.app-debug-63 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\src\debug\res
+com.example.uts_lec.app-main-64 D:\Tugas\Semester 5\Mobile Application Programming\utsutsuts\utslec\app\src\main\res

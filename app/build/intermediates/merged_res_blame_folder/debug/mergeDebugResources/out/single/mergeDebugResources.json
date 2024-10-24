@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_calendar.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/ic_calendar.png"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/layout_activity_signup.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/layout/activity_signup.xml"
     },
@@ -16,20 +12,8 @@
         "source": "com.example.uts_lec.app-main-65:/drawable/ic_visibility_off.png"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_roundbutton.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/roundbutton.xml"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_launcher_background.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_gift.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/gift.png"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_gradientbackgorund.xml.flat",
@@ -40,24 +24,8 @@
         "source": "com.example.uts_lec.app-main-65:/drawable/ic_back_arrow.png"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_wow.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/wow.png"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_api.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/ic_api.png"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_skull.png.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/ic_skull.png"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_button.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_button.xml"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_sample_image.jpeg.flat",
@@ -68,60 +36,36 @@
         "source": "com.example.uts_lec.app-main-65:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_edittext.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_edittext.xml"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_launcher_foreground.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_gradient_background.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/gradient_background.xml"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.uts_lec.app-main-65:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_message.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/ic_message.png"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_background.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/rounded_background.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/font_sora.ttf.flat",
-        "source": "com.example.uts_lec.app-main-65:/font/sora.ttf"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_roundtext.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/roundtext.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_scale_calendar.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/scale_calendar.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_layer_calendar.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/drawable/layer_calendar.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_cloud.png.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/cloud.png"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_glass_button.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/glass_button.xml"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_camera.png.flat",
@@ -134,18 +78,6 @@
     {
         "merged": "com.example.uts_lec.app-debug-63:/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "com.example.uts_lec.app-main-65:/mipmap-hdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/layout_activity_signin.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/layout/activity_signin.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.uts_lec.app-main-65:/mipmap-hdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/drawable_circle_shape.xml.flat",
@@ -162,6 +94,94 @@
     {
         "merged": "com.example.uts_lec.app-debug-63:/layout_activity_main.xml.flat",
         "source": "com.example.uts_lec.app-main-65:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_image.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_image.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_calendar.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/ic_calendar.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_roundbutton.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/roundbutton.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_gift.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/gift.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_api.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/ic_api.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_wow.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/wow.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_button.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_button.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_edittext.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_edittext.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_ic_message.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/ic_message.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/font_sora.ttf.flat",
+        "source": "com.example.uts_lec.app-main-65:/font/sora.ttf"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/font_sora_bold.ttf.flat",
+        "source": "com.example.uts_lec.app-main-65:/font/sora_bold.ttf"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_cloud.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/cloud.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/drawable_logo.png.flat",
+        "source": "com.example.uts_lec.app-main-65:/drawable/logo.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/layout_activity_signin.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/layout/activity_signin.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.uts_lec.app-main-65:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-63:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.uts_lec.app-main-65:/mipmap-hdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.uts_lec.app-debug-63:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
@@ -182,9 +202,5 @@
     {
         "merged": "com.example.uts_lec.app-debug-63:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.example.uts_lec.app-main-65:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-63:/drawable_rounded_image.xml.flat",
-        "source": "com.example.uts_lec.app-main-65:/drawable/rounded_image.xml"
     }
 ]

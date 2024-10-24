@@ -1943,7 +1943,7 @@
     <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns1:ignore="ExtraTranslation">"Pop-Up Window"</string>
-    <string name="default_web_client_id" translatable="false">623174165476-vm8b2i709ovtd9crpiugnpou87qv6m2k.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">64571380664-bm0ob1v74fcn8tals7jqh3qqjiu5idvd.apps.googleusercontent.com</string>
     <string name="dropdown_menu">"Dropdown menu"</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
@@ -1955,11 +1955,11 @@
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
-    <string name="gcm_defaultSenderId" translatable="false">623174165476</string>
-    <string name="google_api_key" translatable="false">AIzaSyBSmSDQKO4HsgaMti4HnDeQy2behSyD4SM</string>
-    <string name="google_app_id" translatable="false">1:623174165476:android:84b12a58f2d2a46f01ddf1</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBSmSDQKO4HsgaMti4HnDeQy2behSyD4SM</string>
-    <string name="google_storage_bucket" translatable="false">utslec2.appspot.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">64571380664</string>
+    <string name="google_api_key" translatable="false">AIzaSyC7wIIB29FBSc5NQQRZ0BRuoSrl3weeOi8</string>
+    <string name="google_app_id" translatable="false">1:64571380664:android:887dddbf63eec4b17d754d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC7wIIB29FBSc5NQQRZ0BRuoSrl3weeOi8</string>
+    <string name="google_storage_bucket" translatable="false">ushare-80df0.appspot.com</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="in_progress">In progress</string>
@@ -2139,7 +2139,7 @@
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
-    <string name="project_id" translatable="false">utslec2</string>
+    <string name="project_id" translatable="false">ushare-80df0</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
     <string name="search_menu_title">Search</string>

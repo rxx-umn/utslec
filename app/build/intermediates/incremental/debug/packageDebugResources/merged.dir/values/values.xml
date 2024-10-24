@@ -20,13 +20,13 @@
     <item name="postImage" type="id"/>
     <item name="sendMessageIcon" type="id"/>
     <string name="app_name">uts-lec</string>
-    <string name="default_web_client_id" translatable="false">623174165476-vm8b2i709ovtd9crpiugnpou87qv6m2k.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">623174165476</string>
-    <string name="google_api_key" translatable="false">AIzaSyBSmSDQKO4HsgaMti4HnDeQy2behSyD4SM</string>
-    <string name="google_app_id" translatable="false">1:623174165476:android:84b12a58f2d2a46f01ddf1</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBSmSDQKO4HsgaMti4HnDeQy2behSyD4SM</string>
-    <string name="google_storage_bucket" translatable="false">utslec2.appspot.com</string>
-    <string name="project_id" translatable="false">utslec2</string>
+    <string name="default_web_client_id" translatable="false">64571380664-bm0ob1v74fcn8tals7jqh3qqjiu5idvd.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">64571380664</string>
+    <string name="google_api_key" translatable="false">AIzaSyC7wIIB29FBSc5NQQRZ0BRuoSrl3weeOi8</string>
+    <string name="google_app_id" translatable="false">1:64571380664:android:887dddbf63eec4b17d754d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC7wIIB29FBSc5NQQRZ0BRuoSrl3weeOi8</string>
+    <string name="google_storage_bucket" translatable="false">ushare-80df0.appspot.com</string>
+    <string name="project_id" translatable="false">ushare-80df0</string>
     <style name="CustomTextAppearance" parent="TextAppearance.AppCompat">
         
         <item name="android:fontFamily">@font/sora</item>
