@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
     android:padding="16dp"
@@ -17,8 +16,7 @@
         android:layout_marginBottom="38dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="16dp">
+        android:paddingVertical="8dp">
 
         <!-- FrameLayout untuk Gambar Profil -->
         <FrameLayout
@@ -118,7 +116,6 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingVertical="8dp"
-        android:paddingHorizontal="16dp"
         android:layout_marginBottom="18dp">
 
         <!-- Kontainer untuk EditText dan Gambar -->
