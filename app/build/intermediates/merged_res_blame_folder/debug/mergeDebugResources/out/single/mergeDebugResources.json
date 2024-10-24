@@ -208,6 +208,10 @@
         "source": "com.example.uts_lec.app-main-66:/drawable/logo.png"
     },
     {
+        "merged": "com.example.uts_lec.app-debug-64:/xml_file_paths.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/xml/file_paths.xml"
+    },
+    {
         "merged": "com.example.uts_lec.app-debug-64:/drawable_ic_cancel.png.flat",
         "source": "com.example.uts_lec.app-main-66:/drawable/ic_cancel.png"
     },

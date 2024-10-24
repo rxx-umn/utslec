@@ -1,4 +1,4 @@
-com.example.uts_lec:xml/image_share_filepaths = 0x7f140002
+com.example.uts_lec:xml/image_share_filepaths = 0x7f140003
 com.example.uts_lec:xml/backup_rules = 0x7f140000
 com.example.uts_lec:styleable/ViewPager2 = 0x7f130091
 com.example.uts_lec:styleable/View = 0x7f13008f
@@ -1262,6 +1262,7 @@ com.example.uts_lec:style/Widget.MaterialComponents.BottomNavigationView = 0x7f1
 com.example.uts_lec:id/signUpTitle = 0x7f090193
 com.example.uts_lec:id/signInTitle = 0x7f090191
 com.example.uts_lec:id/showTitle = 0x7f09018f
+com.example.uts_lec:xml/file_paths = 0x7f140002
 com.example.uts_lec:style/Widget.Material3.BottomAppBar.Button.Navigation = 0x7f12033e
 com.example.uts_lec:id/showHome = 0x7f09018e
 com.example.uts_lec:macro/m3_comp_outlined_card_hover_outline_color = 0x7f0d008e

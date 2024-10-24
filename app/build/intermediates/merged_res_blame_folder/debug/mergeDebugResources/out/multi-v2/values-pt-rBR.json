@@ -4,23 +4,6 @@
             "outputFile": "com.example.uts_lec.app-mergeDebugResources-62:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\b6c1ce90fc4d116f05659dd2a99d451e\\transformed\\play-services-basement-18.3.0\\res\\values-pt-rBR\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "199",
-                        "endColumns": "140",
-                        "endOffsets": "339"
-                    },
-                    "to": {
-                        "startLines": "58",
-                        "startColumns": "4",
-                        "startOffsets": "5718",
-                        "endColumns": "144",
-                        "endOffsets": "5858"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\c7aca75dbb24a55713aa6d57fa24ff9a\\transformed\\play-services-base-18.1.0\\res\\values-pt-rBR\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -103,6 +86,23 @@
                         "startOffsets": "8157,8276,8397,8513,8629,8731,8828,8942,9076,9194,9346,9430,9531,9626,9726,9841,9971,10077,10216,10352,10483,10649,10776,10896,11020,11140,11236,11333,11453,11569,11669,11780,11889,12029,12174,12284,12387,12473,12567,12659,12749,12838,12939,13019,13103,13204,13310,13402,13501,13589,13701,13802,13906,14025,14105,14205",
                         "endColumns": "118,120,115,115,101,96,113,133,117,151,83,100,94,99,114,129,105,138,135,130,165,126,119,123,119,95,96,119,115,99,110,108,139,144,109,102,85,93,91,89,88,100,79,83,100,105,91,98,87,111,100,103,118,79,99,91",
                         "endOffsets": "8271,8392,8508,8624,8726,8823,8937,9071,9189,9341,9425,9526,9621,9721,9836,9966,10072,10211,10347,10478,10644,10771,10891,11015,11135,11231,11328,11448,11564,11664,11775,11884,12024,12169,12279,12382,12468,12562,12654,12744,12833,12934,13014,13098,13199,13305,13397,13496,13584,13696,13797,13901,14020,14100,14200,14292"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\0c82f4720752a989c0fc2dd263492244\\transformed\\play-services-basement-18.1.0\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "199",
+                        "endColumns": "140",
+                        "endOffsets": "339"
+                    },
+                    "to": {
+                        "startLines": "58",
+                        "startColumns": "4",
+                        "startOffsets": "5718",
+                        "endColumns": "144",
+                        "endOffsets": "5858"
                     }
                 },
                 {

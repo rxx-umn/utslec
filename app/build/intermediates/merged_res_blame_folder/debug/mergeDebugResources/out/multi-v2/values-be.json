@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\0c82f4720752a989c0fc2dd263492244\\transformed\\play-services-basement-18.1.0\\res\\values-be\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "141",
+                        "endOffsets": "336"
+                    },
+                    "to": {
+                        "startLines": "60",
+                        "startColumns": "4",
+                        "startOffsets": "5811",
+                        "endColumns": "145",
+                        "endOffsets": "5952"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\fc0fc9ca5b7e42b869d1bfe1b2aaa3eb\\transformed\\browser-1.4.0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -88,23 +105,6 @@
                         "endLines": "7,35,36,37,38,39,47,48,49,74,75,79,82,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,192",
                         "endColumns": "12,76,76,81,96,91,96,131,82,66,92,76,62,115,62,68,58,70,58,53,120,60,62,53,72,121,87,82,151,85,86,90,56,50,65,71,76,83,74,76,81,75,88,81,90,95,73,80,94,53,65,86,85,61,63,62,109,106,102,108,60,54,79",
                         "endOffsets": "427,3234,3311,3393,3490,3582,4410,4542,4625,7493,7586,7990,8222,14599,14662,14731,14790,14861,14920,14974,15095,15156,15219,15273,15346,15468,15556,15639,15791,15877,15964,16055,16112,16163,16229,16301,16378,16462,16537,16614,16696,16772,16861,16943,17034,17130,17204,17285,17380,17434,17500,17587,17673,17735,17799,17862,17972,18079,18182,18291,18352,18407,18798"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\caches\\transforms-4\\b6c1ce90fc4d116f05659dd2a99d451e\\transformed\\play-services-basement-18.3.0\\res\\values-be\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "141",
-                        "endOffsets": "336"
-                    },
-                    "to": {
-                        "startLines": "60",
-                        "startColumns": "4",
-                        "startOffsets": "5811",
-                        "endColumns": "145",
-                        "endOffsets": "5952"
                     }
                 },
                 {
