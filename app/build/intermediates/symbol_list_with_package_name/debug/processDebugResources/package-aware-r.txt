@@ -2881,9 +2881,12 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable error_placeholder
 drawable gift
+drawable glass_button
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_background
 drawable gradientbackgorund
 drawable ic_api
 drawable ic_arrow_back_black_24
@@ -2895,6 +2898,7 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+drawable ic_cancel
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_cry
@@ -2909,6 +2913,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_save
 drawable ic_search_black_24
 drawable ic_send
 drawable ic_skull
@@ -2916,6 +2921,7 @@ drawable ic_visibility
 drawable ic_visibility_off
 drawable internet
 drawable layer_calendar
+drawable logo
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2988,6 +2994,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable placeholder
 drawable roundbutton
 drawable rounded_background
 drawable rounded_button
@@ -3002,6 +3009,7 @@ drawable tooltip_frame_light
 drawable user
 drawable wow
 font sora
+font sora_bold
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3102,7 +3110,10 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btnSignUp
 id buttonPanel
+id cancelButton
 id cancel_button
+id captionText
+id capturedImageView
 id center
 id centerCrop
 id centerInside
@@ -3196,6 +3207,7 @@ id fragment_container_view_tag
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3340,6 +3352,7 @@ id postCaption
 id postImage
 id postLayout
 id pressed
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -3353,6 +3366,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3390,6 +3404,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sendButton
 id sendMessageIcon
 id shortcut
 id showCustom
@@ -3609,6 +3624,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_caption
 layout activity_main
 layout activity_menu
 layout activity_signin
@@ -5227,4 +5243,5 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml backup_rules
 xml data_extraction_rules
+xml file_paths
 xml image_share_filepaths

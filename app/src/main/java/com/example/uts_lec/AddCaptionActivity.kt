@@ -55,11 +55,7 @@ class AddCaptionActivity : ComponentActivity() {
 
         // Inisialisasi komponen
         captionText = findViewById(R.id.captionText)
-        if (captionText == null) {
-            Log.e("AddCaptionActivity", "captionText is null!")
-        } else {
-            Log.d("AddCaptionActivity", "captionText initialized successfully.")
-        }
+        Log.d("AddCaptionActivity", "captionText initialized successfully.")
 
         capturedImageView = findViewById(R.id.capturedImageView)
         Log.d("AddCaptionActivity", "capturedImageView initialized: $capturedImageView")
@@ -174,8 +170,6 @@ class AddCaptionActivity : ComponentActivity() {
             Toast.makeText(this, "Gagal menyimpan data: ${exception.message}", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 
     private fun saveImageToGallery(image: Bitmap) {
         // Implementasi penyimpanan ke galeri
