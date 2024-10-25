@@ -2,32 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2D2D2D">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:padding="16dp"
+    android:weightSum="1">
 
-    <!-- Gambar yang diambil -->
-    <ImageView
-        android:id="@+id/capturedImageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:scaleType="centerInside"
-        android:layout_margin="16dp" />
-
-    <!-- Input Caption -->
-    <EditText
-        android:id="@+id/captionText"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Add Message"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/rounded_background"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/capturedImageView"
-        android:layout_marginTop="16dp"
-        android:inputType="text"
-        android:maxLines="3" />
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="38dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/capturedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <EditText
+            android:id="@+id/captionText"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/roundtext"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:hint="Add Message"
+            android:textAllCaps="false"
+            android:textColor="#00072D"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"

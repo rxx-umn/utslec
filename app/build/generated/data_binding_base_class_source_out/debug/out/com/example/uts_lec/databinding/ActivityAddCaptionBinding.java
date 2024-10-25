@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.uts_lec.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +29,7 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
   public final EditText captionText;
 
   @NonNull
-  public final ImageView capturedImageView;
+  public final ShapeableImageView capturedImageView;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -41,7 +42,7 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
 
   private ActivityAddCaptionBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView cancelButton, @NonNull EditText captionText,
-      @NonNull ImageView capturedImageView, @NonNull ProgressBar progressBar,
+      @NonNull ShapeableImageView capturedImageView, @NonNull ProgressBar progressBar,
       @NonNull ImageView saveButton, @NonNull ImageView sendButton) {
     this.rootView = rootView;
     this.cancelButton = cancelButton;
@@ -92,7 +93,7 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
       }
 
       id = R.id.capturedImageView;
-      ImageView capturedImageView = ViewBindings.findChildViewById(rootView, id);
+      ShapeableImageView capturedImageView = ViewBindings.findChildViewById(rootView, id);
       if (capturedImageView == null) {
         break missingId;
       }

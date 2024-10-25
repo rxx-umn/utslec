@@ -1,22 +1,26 @@
 [
     {
-        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signup.xml",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_signup.xml"
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-mergeDebugResources-63:\\layout\\activity_signup.xml",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signup.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_menu.xml",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_menu.xml"
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-mergeDebugResources-63:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-mergeDebugResources-63:\\layout\\activity_signin.xml",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signin.xml"
     },
     {
         "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_add_caption.xml",
         "source": "com.example.uts_lec.app-main-66:/layout/activity_add_caption.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signin.xml",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_signin.xml"
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-mergeDebugResources-63:\\layout\\activity_menu.xml",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_menu.xml"
     },
     {
-        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_main.xml",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-mergeDebugResources-63:\\layout\\activity_add_caption.xml",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_add_caption.xml"
     }
 ]
