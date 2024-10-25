@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_signup.xml.flat",
-        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signup.xml"
-    },
-    {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_add_caption.xml.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_add_caption.xml"
+    },
+    {
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_signup.xml.flat",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signup.xml"
     },
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_ic_cancel.png.flat",
