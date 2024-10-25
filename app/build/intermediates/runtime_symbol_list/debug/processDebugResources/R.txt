@@ -2855,6 +2855,7 @@ int drawable btn_radio_on_mtrl 0x7f070080
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070081
 int drawable camera 0x7f070082
 int drawable circle_shape 0x7f070083
+int drawable circular_send 0x7f07011c
 int drawable cloud 0x7f070084
 int drawable common_full_open_on_phone 0x7f070085
 int drawable common_google_signin_btn_icon_dark 0x7f070086
@@ -3125,6 +3126,7 @@ int id checked 0x7f090070
 int id chronometer 0x7f090071
 int id circle_center 0x7f090072
 int id circle_shape 0x7f090073
+int id circularBackground 0x7f0901f4
 int id clear_text 0x7f090074
 int id clip_horizontal 0x7f090075
 int id clip_vertical 0x7f090076

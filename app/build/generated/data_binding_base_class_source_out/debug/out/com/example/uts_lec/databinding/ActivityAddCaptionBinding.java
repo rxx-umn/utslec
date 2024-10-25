@@ -32,6 +32,9 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
   public final ShapeableImageView capturedImageView;
 
   @NonNull
+  public final View circularBackground;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
@@ -42,12 +45,14 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
 
   private ActivityAddCaptionBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView cancelButton, @NonNull EditText captionText,
-      @NonNull ShapeableImageView capturedImageView, @NonNull ProgressBar progressBar,
-      @NonNull ImageView saveButton, @NonNull ImageView sendButton) {
+      @NonNull ShapeableImageView capturedImageView, @NonNull View circularBackground,
+      @NonNull ProgressBar progressBar, @NonNull ImageView saveButton,
+      @NonNull ImageView sendButton) {
     this.rootView = rootView;
     this.cancelButton = cancelButton;
     this.captionText = captionText;
     this.capturedImageView = capturedImageView;
+    this.circularBackground = circularBackground;
     this.progressBar = progressBar;
     this.saveButton = saveButton;
     this.sendButton = sendButton;
@@ -98,6 +103,12 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.circularBackground;
+      View circularBackground = ViewBindings.findChildViewById(rootView, id);
+      if (circularBackground == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -117,7 +128,7 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
       }
 
       return new ActivityAddCaptionBinding((RelativeLayout) rootView, cancelButton, captionText,
-          capturedImageView, progressBar, saveButton, sendButton);
+          capturedImageView, circularBackground, progressBar, saveButton, sendButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

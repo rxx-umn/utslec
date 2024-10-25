@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    android:padding="16dp"
-    android:weightSum="1">
+    android:padding="16dp">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300"
+        android:layout_height="330dp"
         android:layout_gravity="center"
-        android:layout_marginTop="90dp"
-        android:layout_marginBottom="38dp">
+        android:layout_marginTop="90dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/capturedImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/roundedImage"/>
 
         <EditText
             android:id="@+id/captionText"
@@ -33,7 +33,8 @@
             android:textAllCaps="false"
             android:textColor="#00072D"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center"/>
     </FrameLayout>
 
     <ProgressBar
@@ -43,40 +44,50 @@
         android:layout_centerInParent="true"
         android:visibility="gone" />
 
-    <!-- Bagian Footer dengan tombol-tombol -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="460dp"
         android:gravity="center">
 
-        <!-- Tombol Batal -->
         <ImageView
             android:id="@+id/cancelButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_cancel"
             android:contentDescription="Cancel"
-            android:layout_weight="1" />
+            android:layout_weight="0.5" />
 
-        <!-- Tombol Kirim -->
-        <ImageView
-            android:id="@+id/sendButton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/ic_send"
-            android:contentDescription="Send"
-            android:layout_weight="1" />
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp">
 
-        <!-- Tombol Simpan -->
+            <View
+                android:id="@+id/circularBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circular_send" />
+
+            <ImageView
+                android:id="@+id/sendButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_send"
+                android:layout_gravity="center"
+                android:paddingLeft="2dp"
+                android:paddingBottom="2dp"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
         <ImageView
             android:id="@+id/saveButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_save"
             android:contentDescription="Save"
-            android:layout_weight="1" />
+            android:layout_weight="0.5" />
     </LinearLayout>
 </RelativeLayout>
