@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.uts_lec.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +29,10 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
   public final EditText captionText;
 
   @NonNull
-  public final ImageView capturedImageView;
+  public final ShapeableImageView capturedImageView;
+
+  @NonNull
+  public final View circularBackground;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -41,12 +45,14 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
 
   private ActivityAddCaptionBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView cancelButton, @NonNull EditText captionText,
-      @NonNull ImageView capturedImageView, @NonNull ProgressBar progressBar,
-      @NonNull ImageView saveButton, @NonNull ImageView sendButton) {
+      @NonNull ShapeableImageView capturedImageView, @NonNull View circularBackground,
+      @NonNull ProgressBar progressBar, @NonNull ImageView saveButton,
+      @NonNull ImageView sendButton) {
     this.rootView = rootView;
     this.cancelButton = cancelButton;
     this.captionText = captionText;
     this.capturedImageView = capturedImageView;
+    this.circularBackground = circularBackground;
     this.progressBar = progressBar;
     this.saveButton = saveButton;
     this.sendButton = sendButton;
@@ -92,8 +98,14 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
       }
 
       id = R.id.capturedImageView;
-      ImageView capturedImageView = ViewBindings.findChildViewById(rootView, id);
+      ShapeableImageView capturedImageView = ViewBindings.findChildViewById(rootView, id);
       if (capturedImageView == null) {
+        break missingId;
+      }
+
+      id = R.id.circularBackground;
+      View circularBackground = ViewBindings.findChildViewById(rootView, id);
+      if (circularBackground == null) {
         break missingId;
       }
 
@@ -116,7 +128,7 @@ public final class ActivityAddCaptionBinding implements ViewBinding {
       }
 
       return new ActivityAddCaptionBinding((RelativeLayout) rootView, cancelButton, captionText,
-          capturedImageView, progressBar, saveButton, sendButton);
+          capturedImageView, circularBackground, progressBar, saveButton, sendButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2856,6 +2856,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable camera
 drawable circle_shape
+drawable circular_send
 drawable cloud
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3126,6 +3127,7 @@ id checked
 id chronometer
 id circle_center
 id circle_shape
+id circularBackground
 id clear_text
 id clip_horizontal
 id clip_vertical

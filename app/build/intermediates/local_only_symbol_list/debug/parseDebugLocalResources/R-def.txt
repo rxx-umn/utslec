@@ -9,6 +9,7 @@ color teal_700
 color white
 drawable camera
 drawable circle_shape
+drawable circular_send
 drawable cloud
 drawable error_placeholder
 drawable gift
@@ -51,6 +52,7 @@ id cancelButton
 id captionText
 id capturedImageView
 id circle_shape
+id circularBackground
 id emailInput
 id everyoneButton
 id image1
