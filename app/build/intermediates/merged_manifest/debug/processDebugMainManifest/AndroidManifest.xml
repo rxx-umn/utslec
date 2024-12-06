@@ -48,7 +48,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.uts_lec.ProfilePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ProfilePageActivity" />
         <activity
             android:name="com.example.uts_lec.ProfilePage"
             android:exported="false" />

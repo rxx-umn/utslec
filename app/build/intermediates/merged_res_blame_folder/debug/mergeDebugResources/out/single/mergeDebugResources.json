@@ -92,6 +92,10 @@
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\ic_skull.png"
     },
     {
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\edit_text_background.xml"
+    },
+    {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_signin.xml.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signin.xml"
     },

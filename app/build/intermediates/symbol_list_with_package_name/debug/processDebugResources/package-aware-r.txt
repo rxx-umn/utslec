@@ -2980,6 +2980,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edit_text_background
 drawable error_placeholder
 drawable gift
 drawable glass_button
@@ -3250,6 +3251,7 @@ id closest
 id collapseActionView
 id compose_view_saveable_id_tag
 id compress
+id confirmPasswordInput
 id confirm_button
 id constraint
 id consume_window_insets_tag
@@ -4766,6 +4768,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_MenuActivity
+style Theme_ProfilePageActivity
 style Theme_SignIn
 style Theme_SignUp
 style Theme_Utslec

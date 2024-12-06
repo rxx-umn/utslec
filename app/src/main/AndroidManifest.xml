@@ -32,7 +32,8 @@
             android:exported="false" />
         <activity
             android:name=".ProfilePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ProfilePageActivity"/>
         <activity
             android:name=".ProfilePage"
             android:exported="false" />

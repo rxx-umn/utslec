@@ -4,30 +4,57 @@ package com.example.uts_lec.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.uts_lec.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityEditAccountBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final EditText confirmPasswordInput;
 
-  private ActivityEditAccountBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout main) {
+  @NonNull
+  public final EditText emailInput;
+
+  @NonNull
+  public final EditText nameInput;
+
+  @NonNull
+  public final EditText passwordInput;
+
+  @NonNull
+  public final ImageView profileImage;
+
+  @NonNull
+  public final Button saveButton;
+
+  private ActivityEditAccountBinding(@NonNull RelativeLayout rootView,
+      @NonNull EditText confirmPasswordInput, @NonNull EditText emailInput,
+      @NonNull EditText nameInput, @NonNull EditText passwordInput, @NonNull ImageView profileImage,
+      @NonNull Button saveButton) {
     this.rootView = rootView;
-    this.main = main;
+    this.confirmPasswordInput = confirmPasswordInput;
+    this.emailInput = emailInput;
+    this.nameInput = nameInput;
+    this.passwordInput = passwordInput;
+    this.profileImage = profileImage;
+    this.saveButton = saveButton;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -48,12 +75,50 @@ public final class ActivityEditAccountBinding implements ViewBinding {
 
   @NonNull
   public static ActivityEditAccountBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.confirmPasswordInput;
+      EditText confirmPasswordInput = ViewBindings.findChildViewById(rootView, id);
+      if (confirmPasswordInput == null) {
+        break missingId;
+      }
+
+      id = R.id.emailInput;
+      EditText emailInput = ViewBindings.findChildViewById(rootView, id);
+      if (emailInput == null) {
+        break missingId;
+      }
+
+      id = R.id.nameInput;
+      EditText nameInput = ViewBindings.findChildViewById(rootView, id);
+      if (nameInput == null) {
+        break missingId;
+      }
+
+      id = R.id.passwordInput;
+      EditText passwordInput = ViewBindings.findChildViewById(rootView, id);
+      if (passwordInput == null) {
+        break missingId;
+      }
+
+      id = R.id.profileImage;
+      ImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
+        break missingId;
+      }
+
+      id = R.id.saveButton;
+      Button saveButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveButton == null) {
+        break missingId;
+      }
+
+      return new ActivityEditAccountBinding((RelativeLayout) rootView, confirmPasswordInput,
+          emailInput, nameInput, passwordInput, profileImage, saveButton);
     }
-
-    ConstraintLayout main = (ConstraintLayout) rootView;
-
-    return new ActivityEditAccountBinding((ConstraintLayout) rootView, main);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

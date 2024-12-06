@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,10 @@ import java.lang.String;
 
 public final class ActivityProfilePageBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
+
+  @NonNull
+  public final ImageView backButton;
 
   @NonNull
   public final TextView editProfile;
@@ -36,10 +39,11 @@ public final class ActivityProfilePageBinding implements ViewBinding {
   @NonNull
   public final TextView username;
 
-  private ActivityProfilePageBinding(@NonNull RelativeLayout rootView,
+  private ActivityProfilePageBinding(@NonNull LinearLayout rootView, @NonNull ImageView backButton,
       @NonNull TextView editProfile, @NonNull Button friendsButton, @NonNull ImageView profileImage,
       @NonNull Button settingsButton, @NonNull TextView username) {
     this.rootView = rootView;
+    this.backButton = backButton;
     this.editProfile = editProfile;
     this.friendsButton = friendsButton;
     this.profileImage = profileImage;
@@ -49,7 +53,7 @@ public final class ActivityProfilePageBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -74,6 +78,12 @@ public final class ActivityProfilePageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.backButton;
+      ImageView backButton = ViewBindings.findChildViewById(rootView, id);
+      if (backButton == null) {
+        break missingId;
+      }
+
       id = R.id.editProfile;
       TextView editProfile = ViewBindings.findChildViewById(rootView, id);
       if (editProfile == null) {
@@ -104,8 +114,8 @@ public final class ActivityProfilePageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfilePageBinding((RelativeLayout) rootView, editProfile, friendsButton,
-          profileImage, settingsButton, username);
+      return new ActivityProfilePageBinding((LinearLayout) rootView, backButton, editProfile,
+          friendsButton, profileImage, settingsButton, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

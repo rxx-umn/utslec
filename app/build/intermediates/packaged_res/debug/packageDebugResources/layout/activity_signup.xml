@@ -14,7 +14,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.1"/>
 
-    <!-- Tombol Back atau Icon Kembali -->
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="24dp"
@@ -23,11 +22,12 @@
         android:layout_gravity="start"
         android:contentDescription="Back Button"
         android:layout_marginBottom="24dp"/>
+
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="0.1"/>
-    <!-- Judul Sign Up -->
+
     <TextView
         android:id="@+id/signUpTitle"
         android:layout_width="wrap_content"
@@ -39,14 +39,12 @@
         android:layout_gravity="start"
         android:layout_marginBottom="24dp"/>
 
-    <!-- Nama dan Kolom Name -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
 
-        <!-- Label Name -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -56,7 +54,6 @@
             android:textSize="16sp"
             android:layout_gravity="center_vertical"/>
 
-        <!-- Input Name -->
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="0dp"
@@ -69,14 +66,12 @@
             android:padding="12dp"/>
     </LinearLayout>
 
-    <!-- Birthday dan Kolom Birthday -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
 
-        <!-- Label Birthday -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -86,7 +81,6 @@
             android:textSize="16sp"
             android:layout_gravity="center_vertical"/>
 
-        <!-- Input Birthday -->
         <EditText
             android:id="@+id/birthdayInput"
             android:layout_width="0dp"
@@ -102,14 +96,12 @@
             android:layout_marginBottom="16dp"/>
     </LinearLayout>
 
-    <!-- Email dan Kolom Email -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
 
-        <!-- Label Email -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -119,7 +111,6 @@
             android:textSize="16sp"
             android:layout_gravity="center_vertical"/>
 
-        <!-- Input Email -->
         <EditText
             android:id="@+id/emailInput"
             android:layout_width="0dp"
@@ -133,14 +124,12 @@
             android:inputType="textEmailAddress"/>
     </LinearLayout>
 
-    <!-- Password dan Kolom Password -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="24dp">
 
-        <!-- Label Password -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -150,7 +139,6 @@
             android:textSize="16sp"
             android:layout_gravity="center_vertical"/>
 
-        <!-- Input Password -->
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="0dp"
@@ -163,12 +151,8 @@
             android:padding="12dp"
             android:drawableEnd="@drawable/ic_visibility"
             android:inputType="textPassword"/>
-
     </LinearLayout>
 
-
-
-    <!-- Tombol Sign Up -->
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="150dp"

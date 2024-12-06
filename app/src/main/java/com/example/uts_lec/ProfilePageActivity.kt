@@ -7,46 +7,73 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class ProfilePageActivity : AppCompatActivity() {
 
     private lateinit var profileImage: ImageView
+    private lateinit var usernameTextView: TextView
     private val PICK_IMAGE_REQUEST = 1
+
+    private lateinit var databaseRef: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
 
         profileImage = findViewById(R.id.profileImage)
+        usernameTextView = findViewById(R.id.username)
         val editProfile: TextView = findViewById(R.id.editProfile)
         val friendsButton: Button = findViewById(R.id.friendsButton)
         val settingsButton: Button = findViewById(R.id.settingsButton)
+        val backButton: ImageView = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            // Tutup Activity saat tombol back diklik
+            finish()
+        }
 
-        // Set click listener for profile image
+        auth = FirebaseAuth.getInstance()
+        databaseRef = FirebaseDatabase.getInstance().getReference("users")
+
+        loadUserData()
+
         profileImage.setOnClickListener {
             openGallery()
         }
 
-        // Set click listener for Edit Profile
         editProfile.setOnClickListener {
-            val intent = Intent(this, EditAccountActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, EditAccountActivity::class.java))
         }
 
-        // Set click listener for Friends
         friendsButton.setOnClickListener {
-            val intent = Intent(this, AddFriendActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, AddFriendActivity::class.java))
         }
 
-        // Set click listener for Settings
         settingsButton.setOnClickListener {
-            val intent = Intent(this, AccountSettingsActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, AccountSettingsActivity::class.java))
+        }
+    }
+
+    private fun loadUserData() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            databaseRef.child(userId).get().addOnSuccessListener { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    val user = dataSnapshot.getValue(User::class.java)
+                    user?.let {
+                        usernameTextView.text = it.name // Menampilkan nama pengguna
+                    }
+                }
+            }.addOnFailureListener {
+                Toast.makeText(this, "Gagal memuat data pengguna", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
