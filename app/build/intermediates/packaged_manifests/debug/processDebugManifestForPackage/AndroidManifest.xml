@@ -38,6 +38,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.Utslec" >
         <activity
+            android:name="com.example.uts_lec.AccountSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uts_lec.AddFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uts_lec.EditAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uts_lec.ProfilePageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uts_lec.ProfilePage"
+            android:exported="false" />
+        <activity
             android:name="com.example.uts_lec.MainActivity"
             android:exported="true"
             android:label="@string/app_name"

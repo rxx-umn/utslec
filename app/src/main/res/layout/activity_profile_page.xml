@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alex"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_below="@id/profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/editProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_below="@id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <Button
+        android:id="@+id/friendsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:layout_below="@id/editProfile"
+        android:layout_marginTop="50dp"
+        android:background="#555555"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:layout_below="@id/friendsButton"
+        android:layout_marginTop="10dp"
+        android:background="#555555"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>

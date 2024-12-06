@@ -3,6 +3,7 @@ package com.example.uts_lec
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -32,6 +33,7 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
     // Tambahkan view untuk post image dan caption
     private lateinit var postImageView: ImageView
     private lateinit var postCaptionView: TextView
+    private lateinit var profileImage: ImageView
 
     // Firebase Database reference
     private lateinit var databaseRef: DatabaseReference
@@ -48,6 +50,7 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         // Referensi ke postImageView dan postCaptionView untuk menampilkan gambar dan caption
         postImageView = findViewById(R.id.postImage)
         postCaptionView = findViewById(R.id.postCaption)
+        profileImage = findViewById(R.id.overlay_image)
 
         // Firebase Database Reference
         databaseRef = FirebaseDatabase.getInstance().getReference("posts")
@@ -59,9 +62,18 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         loadPostsFromFirebase()
 
         // Referensi ke Gambar Profil
-        val profileImage: ImageView = findViewById(R.id.overlay_image)
         profileImage.setOnClickListener {
-            Toast.makeText(this, "Profil diklik", Toast.LENGTH_SHORT).show()
+            // Arahkan ke ProfilePageActivity
+            val intent = Intent(this, ProfilePageActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Cek apakah ada URI gambar yang dikirim dari ProfilePageActivity
+        intent.getStringExtra("imageUri")?.let { uriString ->
+            val imageUri: Uri = Uri.parse(uriString)
+            Glide.with(this)
+                .load(imageUri)
+                .into(profileImage)
         }
 
         // Referensi ke Tombol Everyone
@@ -71,7 +83,7 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         }
 
         // Referensi ke Ikon Pesan
-        val messageIcon: View= findViewById(R.id.messageIcon)
+        val messageIcon: View = findViewById(R.id.messageIcon)
         messageIcon.setOnClickListener {
             Toast.makeText(this, "Message Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
@@ -95,15 +107,15 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         val image3 = findViewById<ImageView>(R.id.image3)
 
         image1.setOnClickListener {
-            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
 
         image2.setOnClickListener {
-            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
 
         image3.setOnClickListener {
-            Toast.makeText(this,"Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -135,7 +147,6 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
             }
         })
     }
-
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event)
