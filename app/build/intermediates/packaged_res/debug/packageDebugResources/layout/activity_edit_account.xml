@@ -83,5 +83,4 @@
         android:background="#FF6200EE"
         android:textColor="#FFFFFF"
         android:visibility="gone"/>
-
 </RelativeLayout>

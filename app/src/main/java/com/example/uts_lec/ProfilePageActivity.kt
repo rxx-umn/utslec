@@ -34,8 +34,8 @@ class ProfilePageActivity : AppCompatActivity() {
         val friendsButton: Button = findViewById(R.id.friendsButton)
         val settingsButton: Button = findViewById(R.id.settingsButton)
         val backButton: ImageView = findViewById(R.id.backButton)
+
         backButton.setOnClickListener {
-            // Tutup Activity saat tombol back diklik
             finish()
         }
 
@@ -68,7 +68,7 @@ class ProfilePageActivity : AppCompatActivity() {
                 if (dataSnapshot.exists()) {
                     val user = dataSnapshot.getValue(User::class.java)
                     user?.let {
-                        usernameTextView.text = it.name // Menampilkan nama pengguna
+                        usernameTextView.text = it.name // Menampilkan nama pengguna dari Firebase
                     }
                 }
             }.addOnFailureListener {

@@ -106,10 +106,12 @@ class EditAccountActivity : AppCompatActivity() {
 
         val userId = auth.currentUser?.uid
         if (userId != null) {
+            // Update name and email in the database
             databaseRef.child(userId).child("name").setValue(newName)
             databaseRef.child(userId).child("email").setValue(newEmail)
+
+            // Update password in Firebase Auth if provided
             if (newPassword.isNotEmpty()) {
-                // Update password in Firebase Auth
                 auth.currentUser?.updatePassword(newPassword)?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show()
@@ -119,8 +121,17 @@ class EditAccountActivity : AppCompatActivity() {
                 }
             }
 
-            Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
-            finish()
+            // Menyimpan data pengguna ke Firebase
+            val user = User(name = newName, email = newEmail, birthday = originalEmail) // Ganti birthday jika perlu
+            databaseRef.child(userId).setValue(user)
+                .addOnCompleteListener { dbTask ->
+                    if (dbTask.isSuccessful) {
+                        Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Gagal menyimpan data pengguna", Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
     }
 }
