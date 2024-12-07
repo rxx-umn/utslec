@@ -1,5 +1,7 @@
 package com.example.uts_lec
 
+import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,11 +14,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class EditAccountActivity : AppCompatActivity() {
 
     private lateinit var nameInput: EditText
     private lateinit var emailInput: EditText
+    private lateinit var birthdayInput: EditText
     private lateinit var passwordInput: EditText
     private lateinit var confirmPasswordInput: EditText
     private lateinit var saveButton: Button
@@ -27,6 +31,7 @@ class EditAccountActivity : AppCompatActivity() {
 
     private var originalEmail: String = ""
     private var originalName: String = ""
+    private var originalBirthday: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +39,7 @@ class EditAccountActivity : AppCompatActivity() {
 
         nameInput = findViewById(R.id.nameInput)
         emailInput = findViewById(R.id.emailInput)
+        birthdayInput = findViewById(R.id.birthdayInput)
         passwordInput = findViewById(R.id.passwordInput)
         confirmPasswordInput = findViewById(R.id.confirmPasswordInput)
         saveButton = findViewById(R.id.saveButton)
@@ -45,6 +51,11 @@ class EditAccountActivity : AppCompatActivity() {
         loadUserData()
 
         addTextWatchers()
+
+        // Set listener untuk birthdayInput
+        birthdayInput.setOnClickListener {
+            showDatePickerDialog()
+        }
 
         saveButton.setOnClickListener {
             saveChanges()
@@ -60,8 +71,10 @@ class EditAccountActivity : AppCompatActivity() {
                     user?.let {
                         originalName = it.name
                         originalEmail = it.email
+                        originalBirthday = it.birthday
                         nameInput.setText(originalName)
                         emailInput.setText(originalEmail)
+                        birthdayInput.setText(originalBirthday)
                     }
                 }
             }.addOnFailureListener {
@@ -83,12 +96,14 @@ class EditAccountActivity : AppCompatActivity() {
 
         nameInput.addTextChangedListener(textWatcher)
         emailInput.addTextChangedListener(textWatcher)
+        birthdayInput.addTextChangedListener(textWatcher)
         passwordInput.addTextChangedListener(textWatcher)
     }
 
     private fun checkForChanges() {
         val isChanged = nameInput.text.toString() != originalName ||
                 emailInput.text.toString() != originalEmail ||
+                birthdayInput.text.toString() != originalBirthday ||
                 passwordInput.text.toString().isNotEmpty()
 
         saveButton.visibility = if (isChanged) View.VISIBLE else View.GONE
@@ -97,18 +112,21 @@ class EditAccountActivity : AppCompatActivity() {
     private fun saveChanges() {
         val newName = nameInput.text.toString()
         val newEmail = emailInput.text.toString()
+        val newBirthday = birthdayInput.text.toString()
         val newPassword = passwordInput.text.toString()
+        val confirmPassword = confirmPasswordInput.text.toString()
 
-        if (newPassword.isNotEmpty() && newPassword != confirmPasswordInput.text.toString()) {
+        if (newPassword.isNotEmpty() && newPassword != confirmPassword) {
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             return
         }
 
         val userId = auth.currentUser?.uid
         if (userId != null) {
-            // Update name and email in the database
+            // Update name, email, and birthday in the database
             databaseRef.child(userId).child("name").setValue(newName)
             databaseRef.child(userId).child("email").setValue(newEmail)
+            databaseRef.child(userId).child("birthday").setValue(newBirthday)
 
             // Update password in Firebase Auth if provided
             if (newPassword.isNotEmpty()) {
@@ -122,16 +140,35 @@ class EditAccountActivity : AppCompatActivity() {
             }
 
             // Menyimpan data pengguna ke Firebase
-            val user = User(name = newName, email = newEmail, birthday = originalEmail) // Ganti birthday jika perlu
+            val user = User(name = newName, email = newEmail, birthday = newBirthday)
             databaseRef.child(userId).setValue(user)
                 .addOnCompleteListener { dbTask ->
                     if (dbTask.isSuccessful) {
                         Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
-                        finish()
+                        // Arahkan kembali ke ProfilePageActivity
+                        val intent = Intent(this, ProfilePageActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                        finish() // Tutup EditAccountActivity
                     } else {
                         Toast.makeText(this, "Gagal menyimpan data pengguna", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
+    }
+
+    private fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+            // Format bulan dari 0-11 menjadi 1-12
+            val formattedMonth = selectedMonth + 1
+            birthdayInput.setText("$selectedDay/$formattedMonth/$selectedYear")
+        }, year, month, day)
+
+        datePickerDialog.show()
     }
 }

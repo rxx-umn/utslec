@@ -73,6 +73,38 @@
         android:layout_width="match_parent"
         android:layout_height="16dp"/>
 
+    <!-- TextViews untuk menampilkan data pengguna -->
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/birthdayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birthday: "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
     <Button
         android:id="@+id/friendsButton"
         android:layout_width="300dp"

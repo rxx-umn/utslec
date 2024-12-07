@@ -17,6 +17,15 @@ import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
 import java.util.*
 
+data class User(
+    val name: String = "", // Default value
+    val email: String = "", // Default value
+    val birthday: String = "" // Default value
+) {
+    // Constructor tanpa argumen
+    constructor() : this("", "", "")
+}
+
 class SignUpActivity : ComponentActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -26,7 +35,6 @@ class SignUpActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-
         auth = FirebaseAuth.getInstance()
         databaseRef = FirebaseDatabase.getInstance().getReference("users")
 
@@ -36,9 +44,7 @@ class SignUpActivity : ComponentActivity() {
         val birthdayInput: EditText = findViewById(R.id.birthdayInput)
 
         val backButton: ImageView = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            finish()
-        }
+        backButton.setOnClickListener { finish() }
 
         val signUpButton: Button = findViewById(R.id.signUpButton)
         signUpButton.setOnClickListener {
@@ -47,6 +53,7 @@ class SignUpActivity : ComponentActivity() {
             val password = passwordInput.text.toString().trim()
             val birthday = birthdayInput.text.toString().trim()
 
+            // Validasi input
             if (name.isEmpty() || email.isEmpty() || password.isEmpty() || birthday.isEmpty()) {
                 Toast.makeText(this, "Semua kolom harus diisi", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -57,6 +64,10 @@ class SignUpActivity : ComponentActivity() {
                 return@setOnClickListener
             }
 
+            // Tambahkan log untuk debugging
+            Log.d("SignUpActivity", "Attempting to sign up user: $email")
+
+            // Proses pendaftaran
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -69,8 +80,10 @@ class SignUpActivity : ComponentActivity() {
                                 .addOnCompleteListener { dbTask ->
                                     if (dbTask.isSuccessful) {
                                         Toast.makeText(this, "Sign Up berhasil", Toast.LENGTH_SHORT).show()
+                                        Log.d("SignUpActivity", "Navigating to SignInActivity")
+                                        // Langsung navigasi ke SignInActivity
                                         startActivity(Intent(this, SignInActivity::class.java))
-                                        finish()
+                                        finish() // Tutup SignUpActivity
                                     } else {
                                         Toast.makeText(this, "Gagal menyimpan data pengguna", Toast.LENGTH_SHORT).show()
                                     }
@@ -116,10 +129,3 @@ class SignUpActivity : ComponentActivity() {
         }
     }
 }
-
-// Model User
-data class User(
-    val name: String = "",
-    val email: String = "",
-    val birthday: String = ""
-)

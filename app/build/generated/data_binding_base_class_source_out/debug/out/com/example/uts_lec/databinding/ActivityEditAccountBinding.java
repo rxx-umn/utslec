@@ -22,6 +22,9 @@ public final class ActivityEditAccountBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final EditText birthdayInput;
+
+  @NonNull
   public final EditText confirmPasswordInput;
 
   @NonNull
@@ -40,10 +43,11 @@ public final class ActivityEditAccountBinding implements ViewBinding {
   public final Button saveButton;
 
   private ActivityEditAccountBinding(@NonNull RelativeLayout rootView,
-      @NonNull EditText confirmPasswordInput, @NonNull EditText emailInput,
-      @NonNull EditText nameInput, @NonNull EditText passwordInput, @NonNull ImageView profileImage,
-      @NonNull Button saveButton) {
+      @NonNull EditText birthdayInput, @NonNull EditText confirmPasswordInput,
+      @NonNull EditText emailInput, @NonNull EditText nameInput, @NonNull EditText passwordInput,
+      @NonNull ImageView profileImage, @NonNull Button saveButton) {
     this.rootView = rootView;
+    this.birthdayInput = birthdayInput;
     this.confirmPasswordInput = confirmPasswordInput;
     this.emailInput = emailInput;
     this.nameInput = nameInput;
@@ -79,6 +83,12 @@ public final class ActivityEditAccountBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.birthdayInput;
+      EditText birthdayInput = ViewBindings.findChildViewById(rootView, id);
+      if (birthdayInput == null) {
+        break missingId;
+      }
+
       id = R.id.confirmPasswordInput;
       EditText confirmPasswordInput = ViewBindings.findChildViewById(rootView, id);
       if (confirmPasswordInput == null) {
@@ -115,8 +125,8 @@ public final class ActivityEditAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEditAccountBinding((RelativeLayout) rootView, confirmPasswordInput,
-          emailInput, nameInput, passwordInput, profileImage, saveButton);
+      return new ActivityEditAccountBinding((RelativeLayout) rootView, birthdayInput,
+          confirmPasswordInput, emailInput, nameInput, passwordInput, profileImage, saveButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

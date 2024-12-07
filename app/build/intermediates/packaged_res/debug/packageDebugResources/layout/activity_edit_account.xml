@@ -51,13 +51,25 @@
         android:padding="10dp"/>
 
     <EditText
+        android:id="@+id/birthdayInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Birthday"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/edit_text_background"
+        android:layout_below="@id/emailInput"
+        android:padding="10dp"
+        android:focusable="true"
+        android:clickable="true"/>
+
+    <EditText
         android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:textColor="#FFFFFF"
         android:background="@drawable/edit_text_background"
-        android:layout_below="@id/emailInput"
+        android:layout_below="@id/birthdayInput"
         android:padding="10dp"
         android:inputType="textPassword"/>
 
@@ -70,8 +82,7 @@
         android:background="@drawable/edit_text_background"
         android:layout_below="@id/passwordInput"
         android:padding="10dp"
-        android:inputType="textPassword"
-        android:visibility="gone"/>
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/saveButton"
@@ -81,6 +92,5 @@
         android:layout_below="@id/confirmPasswordInput"
         android:layout_marginTop="20dp"
         android:background="#FF6200EE"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"/>
+        android:textColor="#FFFFFF"/>
 </RelativeLayout>

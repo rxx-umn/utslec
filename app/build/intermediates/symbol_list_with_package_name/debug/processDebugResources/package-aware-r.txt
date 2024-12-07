@@ -3210,6 +3210,7 @@ id beginning
 id below
 id bestChoice
 id birthdayInput
+id birthdayTextView
 id blocking
 id bottom
 id bounce
@@ -3308,6 +3309,7 @@ id edit_query
 id edit_text_id
 id elastic
 id emailInput
+id emailTextView
 id embed
 id end
 id endToStart
@@ -3451,6 +3453,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nameInput
+id nameTextView
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3957,6 +3960,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

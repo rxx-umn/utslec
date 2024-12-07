@@ -1,97 +1,61 @@
 package com.example.uts_lec
 
-import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.View
-import android.widget.Button
-import android.widget.Toast
-import android.widget.ImageView
+import android.util.Log
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import androidx.activity.ComponentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class ProfilePageActivity : AppCompatActivity() {
+class ProfilePageActivity : ComponentActivity() {
 
-    private lateinit var profileImage: ImageView
-    private lateinit var usernameTextView: TextView
-    private val PICK_IMAGE_REQUEST = 1
-
-    private lateinit var databaseRef: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private lateinit var databaseRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
 
-        profileImage = findViewById(R.id.profileImage)
-        usernameTextView = findViewById(R.id.username)
-        val editProfile: TextView = findViewById(R.id.editProfile)
-        val friendsButton: Button = findViewById(R.id.friendsButton)
-        val settingsButton: Button = findViewById(R.id.settingsButton)
-        val backButton: ImageView = findViewById(R.id.backButton)
-
-        backButton.setOnClickListener {
-            finish()
-        }
-
         auth = FirebaseAuth.getInstance()
         databaseRef = FirebaseDatabase.getInstance().getReference("users")
 
-        loadUserData()
+        loadUserData() // Memuat data pengguna saat activity dimulai
 
-        profileImage.setOnClickListener {
-            openGallery()
-        }
-
-        editProfile.setOnClickListener {
+        // Tambahkan listener untuk Edit Profile
+        val editProfileTextView: TextView = findViewById(R.id.editProfile)
+        editProfileTextView.setOnClickListener {
+            // Arahkan ke EditAccountActivity
             startActivity(Intent(this, EditAccountActivity::class.java))
-        }
-
-        friendsButton.setOnClickListener {
-            startActivity(Intent(this, AddFriendActivity::class.java))
-        }
-
-        settingsButton.setOnClickListener {
-            startActivity(Intent(this, AccountSettingsActivity::class.java))
         }
     }
 
     private fun loadUserData() {
         val userId = auth.currentUser?.uid
         if (userId != null) {
-            databaseRef.child(userId).get().addOnSuccessListener { dataSnapshot ->
-                if (dataSnapshot.exists()) {
-                    val user = dataSnapshot.getValue(User::class.java)
-                    user?.let {
-                        usernameTextView.text = it.name // Menampilkan nama pengguna dari Firebase
-                    }
+            val userRef = databaseRef.child(userId)
+            userRef.get().addOnSuccessListener { dataSnapshot ->
+                val user = dataSnapshot.getValue(User::class.java)
+                if (user != null) {
+                    // Update UI dengan data pengguna
+                    val nameTextView: TextView = findViewById(R.id.nameTextView)
+                    val emailTextView: TextView = findViewById(R.id.emailTextView)
+                    val birthdayTextView: TextView = findViewById(R.id.birthdayTextView)
+
+                    nameTextView.text = user.name
+                    emailTextView.text = user.email
+                    birthdayTextView.text = user.birthday
+                } else {
+                    Log.e("ProfilePageActivity", "User data is null")
                 }
-            }.addOnFailureListener {
+            }.addOnFailureListener { exception ->
+                Log.e("ProfilePageActivity", "Error loading user data: ${exception.message}")
                 Toast.makeText(this, "Gagal memuat data pengguna", Toast.LENGTH_SHORT).show()
             }
-        }
-    }
-
-    private fun openGallery() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
-            val imageUri: Uri? = data.data
-            profileImage.setImageURI(imageUri)
-
-            // Update image in MenuActivity
-            val intent = Intent(this, MenuActivity::class.java)
-            intent.putExtra("imageUri", imageUri.toString())
-            startActivity(intent)
+        } else {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
         }
     }
 }

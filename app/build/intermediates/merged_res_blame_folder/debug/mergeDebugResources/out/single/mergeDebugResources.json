@@ -156,10 +156,6 @@
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\ic_cry.png"
     },
     {
-        "merged": "com.example.uts_lec.app-debug-64:/layout_activity_profile_page.xml.flat",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_profile_page.xml"
-    },
-    {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_circle_shape.xml.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\circle_shape.xml"
     },
@@ -222,6 +218,10 @@
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_sample_image.jpeg.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\sample_image.jpeg"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-64:/layout_activity_edit_account.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_edit_account.xml"
     },
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_add_friend.xml.flat",

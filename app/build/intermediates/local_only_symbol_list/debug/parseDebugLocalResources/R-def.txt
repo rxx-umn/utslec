@@ -47,6 +47,7 @@ font sora
 font sora_bold
 id backButton
 id birthdayInput
+id birthdayTextView
 id btnSignUp
 id cancelButton
 id captionText
@@ -55,6 +56,7 @@ id circle_shape
 id confirmPasswordInput
 id editProfile
 id emailInput
+id emailTextView
 id everyoneButton
 id friendsButton
 id image1
@@ -65,6 +67,7 @@ id messageIcon
 id messageInput
 id messageLayout
 id nameInput
+id nameTextView
 id overlay_image
 id passwordInput
 id postCaption
@@ -96,6 +99,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string default_web_client_id
+string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
