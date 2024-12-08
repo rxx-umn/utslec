@@ -25,19 +25,10 @@ public final class ActivityProfilePageBinding implements ViewBinding {
   public final ImageView backButton;
 
   @NonNull
-  public final TextView birthdayTextView;
-
-  @NonNull
   public final TextView editProfile;
 
   @NonNull
-  public final TextView emailTextView;
-
-  @NonNull
   public final Button friendsButton;
-
-  @NonNull
-  public final TextView nameTextView;
 
   @NonNull
   public final ImageView profileImage;
@@ -49,17 +40,12 @@ public final class ActivityProfilePageBinding implements ViewBinding {
   public final TextView username;
 
   private ActivityProfilePageBinding(@NonNull LinearLayout rootView, @NonNull ImageView backButton,
-      @NonNull TextView birthdayTextView, @NonNull TextView editProfile,
-      @NonNull TextView emailTextView, @NonNull Button friendsButton,
-      @NonNull TextView nameTextView, @NonNull ImageView profileImage,
+      @NonNull TextView editProfile, @NonNull Button friendsButton, @NonNull ImageView profileImage,
       @NonNull Button settingsButton, @NonNull TextView username) {
     this.rootView = rootView;
     this.backButton = backButton;
-    this.birthdayTextView = birthdayTextView;
     this.editProfile = editProfile;
-    this.emailTextView = emailTextView;
     this.friendsButton = friendsButton;
-    this.nameTextView = nameTextView;
     this.profileImage = profileImage;
     this.settingsButton = settingsButton;
     this.username = username;
@@ -98,33 +84,15 @@ public final class ActivityProfilePageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.birthdayTextView;
-      TextView birthdayTextView = ViewBindings.findChildViewById(rootView, id);
-      if (birthdayTextView == null) {
-        break missingId;
-      }
-
       id = R.id.editProfile;
       TextView editProfile = ViewBindings.findChildViewById(rootView, id);
       if (editProfile == null) {
         break missingId;
       }
 
-      id = R.id.emailTextView;
-      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
-      if (emailTextView == null) {
-        break missingId;
-      }
-
       id = R.id.friendsButton;
       Button friendsButton = ViewBindings.findChildViewById(rootView, id);
       if (friendsButton == null) {
-        break missingId;
-      }
-
-      id = R.id.nameTextView;
-      TextView nameTextView = ViewBindings.findChildViewById(rootView, id);
-      if (nameTextView == null) {
         break missingId;
       }
 
@@ -146,9 +114,8 @@ public final class ActivityProfilePageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfilePageBinding((LinearLayout) rootView, backButton, birthdayTextView,
-          editProfile, emailTextView, friendsButton, nameTextView, profileImage, settingsButton,
-          username);
+      return new ActivityProfilePageBinding((LinearLayout) rootView, backButton, editProfile,
+          friendsButton, profileImage, settingsButton, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

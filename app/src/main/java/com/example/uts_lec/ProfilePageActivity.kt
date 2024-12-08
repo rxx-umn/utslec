@@ -2,60 +2,72 @@ package com.example.uts_lec
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class ProfilePageActivity : ComponentActivity() {
+class ProfilePageActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var username: TextView
+    private lateinit var profileImage: ImageView
+    private lateinit var editProfileButton: TextView
+
     private lateinit var databaseRef: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
 
-        auth = FirebaseAuth.getInstance()
+        username = findViewById(R.id.username)
+        profileImage = findViewById(R.id.profileImage)
+        editProfileButton = findViewById(R.id.editProfile)
+
         databaseRef = FirebaseDatabase.getInstance().getReference("users")
+        auth = FirebaseAuth.getInstance()
 
-        loadUserData() // Memuat data pengguna saat activity dimulai
+        loadUserData()
 
-        // Tambahkan listener untuk Edit Profile
-        val editProfileTextView: TextView = findViewById(R.id.editProfile)
-        editProfileTextView.setOnClickListener {
-            // Arahkan ke EditAccountActivity
-            startActivity(Intent(this, EditAccountActivity::class.java))
+        editProfileButton.setOnClickListener {
+            val intent = Intent(this, EditAccountActivity::class.java)
+            startActivityForResult(intent, 1) // Menggunakan startActivityForResult
         }
     }
 
     private fun loadUserData() {
         val userId = auth.currentUser?.uid
         if (userId != null) {
-            val userRef = databaseRef.child(userId)
-            userRef.get().addOnSuccessListener { dataSnapshot ->
-                val user = dataSnapshot.getValue(User::class.java)
-                if (user != null) {
-                    // Update UI dengan data pengguna
-                    val nameTextView: TextView = findViewById(R.id.nameTextView)
-                    val emailTextView: TextView = findViewById(R.id.emailTextView)
-                    val birthdayTextView: TextView = findViewById(R.id.birthdayTextView)
-
-                    nameTextView.text = user.name
-                    emailTextView.text = user.email
-                    birthdayTextView.text = user.birthday
-                } else {
-                    Log.e("ProfilePageActivity", "User data is null")
+            databaseRef.child(userId).get().addOnSuccessListener { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    val user = dataSnapshot.getValue(User::class.java)
+                    user?.let {
+                        username.text = it.name
+                        // Load profile image if available
+                        if (it.profileImageUrl != null) {
+                            Glide.with(this)
+                                .load(it.profileImageUrl)
+                                .apply(RequestOptions().transform(CircleCrop()))
+                                .into(profileImage)
+                        }
+                    }
                 }
-            }.addOnFailureListener { exception ->
-                Log.e("ProfilePageActivity", "Error loading user data: ${exception.message}")
+            }.addOnFailureListener {
                 Toast.makeText(this, "Gagal memuat data pengguna", Toast.LENGTH_SHORT).show()
             }
-        } else {
-            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) {
+            loadUserData() // Memuat ulang data pengguna setelah kembali dari EditAccountActivity
         }
     }
 }

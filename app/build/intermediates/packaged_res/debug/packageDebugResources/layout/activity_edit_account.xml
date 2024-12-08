@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:orientation="vertical"
     android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_back_arrow"
+        android:contentDescription="Back Button"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,59 +26,51 @@
         android:id="@+id/profileImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:src="@drawable/user"
         android:scaleType="centerCrop" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile Picture"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/profileImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/nameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:background="@drawable/edit_text_background"
-        android:padding="10dp"/>
-
-    <EditText
-        android:id="@+id/emailInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/edit_text_background"
-        android:layout_below="@id/nameInput"
-        android:padding="10dp"/>
-
-    <EditText
-        android:id="@+id/birthdayInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Birthday"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/edit_text_background"
-        android:layout_below="@id/emailInput"
         android:padding="10dp"
-        android:focusable="true"
-        android:clickable="true"/>
+        android:text="Alex"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/birthdayTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Birthday: 01/12/2000"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: alex@ushare.umn.ac.id"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:textColor="#FFFFFF"
+        android:hint="Change Password"
+        android:textColor="#000000"
         android:background="@drawable/edit_text_background"
-        android:layout_below="@id/birthdayInput"
         android:padding="10dp"
         android:inputType="textPassword"/>
 
@@ -78,9 +79,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:background="@drawable/edit_text_background"
-        android:layout_below="@id/passwordInput"
         android:padding="10dp"
         android:inputType="textPassword"/>
 
@@ -89,8 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_below="@id/confirmPasswordInput"
         android:layout_marginTop="20dp"
         android:background="#FF6200EE"
-        android:textColor="#FFFFFF"/>
-</RelativeLayout>
+        android:textColor="#000000"/>
+</LinearLayout>

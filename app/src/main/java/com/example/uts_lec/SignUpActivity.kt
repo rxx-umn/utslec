@@ -18,9 +18,10 @@ import android.util.Log
 import java.util.*
 
 data class User(
-    val name: String = "", // Default value
-    val email: String = "", // Default value
-    val birthday: String = "" // Default value
+    var name: String? = "",
+    var birthday: String? = "",
+    var email: String? = "",
+    var profileImageUrl: String? = ""
 ) {
     // Constructor tanpa argumen
     constructor() : this("", "", "")

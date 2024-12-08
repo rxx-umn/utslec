@@ -7,7 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -19,16 +20,19 @@ import java.lang.String;
 
 public final class ActivityEditAccountBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final EditText birthdayInput;
+  public final ImageView backButton;
+
+  @NonNull
+  public final TextView birthdayTextView;
 
   @NonNull
   public final EditText confirmPasswordInput;
 
   @NonNull
-  public final EditText emailInput;
+  public final TextView emailTextView;
 
   @NonNull
   public final EditText nameInput;
@@ -42,14 +46,15 @@ public final class ActivityEditAccountBinding implements ViewBinding {
   @NonNull
   public final Button saveButton;
 
-  private ActivityEditAccountBinding(@NonNull RelativeLayout rootView,
-      @NonNull EditText birthdayInput, @NonNull EditText confirmPasswordInput,
-      @NonNull EditText emailInput, @NonNull EditText nameInput, @NonNull EditText passwordInput,
+  private ActivityEditAccountBinding(@NonNull LinearLayout rootView, @NonNull ImageView backButton,
+      @NonNull TextView birthdayTextView, @NonNull EditText confirmPasswordInput,
+      @NonNull TextView emailTextView, @NonNull EditText nameInput, @NonNull EditText passwordInput,
       @NonNull ImageView profileImage, @NonNull Button saveButton) {
     this.rootView = rootView;
-    this.birthdayInput = birthdayInput;
+    this.backButton = backButton;
+    this.birthdayTextView = birthdayTextView;
     this.confirmPasswordInput = confirmPasswordInput;
-    this.emailInput = emailInput;
+    this.emailTextView = emailTextView;
     this.nameInput = nameInput;
     this.passwordInput = passwordInput;
     this.profileImage = profileImage;
@@ -58,7 +63,7 @@ public final class ActivityEditAccountBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -83,9 +88,15 @@ public final class ActivityEditAccountBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.birthdayInput;
-      EditText birthdayInput = ViewBindings.findChildViewById(rootView, id);
-      if (birthdayInput == null) {
+      id = R.id.backButton;
+      ImageView backButton = ViewBindings.findChildViewById(rootView, id);
+      if (backButton == null) {
+        break missingId;
+      }
+
+      id = R.id.birthdayTextView;
+      TextView birthdayTextView = ViewBindings.findChildViewById(rootView, id);
+      if (birthdayTextView == null) {
         break missingId;
       }
 
@@ -95,9 +106,9 @@ public final class ActivityEditAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.emailInput;
-      EditText emailInput = ViewBindings.findChildViewById(rootView, id);
-      if (emailInput == null) {
+      id = R.id.emailTextView;
+      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
+      if (emailTextView == null) {
         break missingId;
       }
 
@@ -125,8 +136,8 @@ public final class ActivityEditAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEditAccountBinding((RelativeLayout) rootView, birthdayInput,
-          confirmPasswordInput, emailInput, nameInput, passwordInput, profileImage, saveButton);
+      return new ActivityEditAccountBinding((LinearLayout) rootView, backButton, birthdayTextView,
+          confirmPasswordInput, emailTextView, nameInput, passwordInput, profileImage, saveButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

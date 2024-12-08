@@ -67,7 +67,6 @@ id messageIcon
 id messageInput
 id messageLayout
 id nameInput
-id nameTextView
 id overlay_image
 id passwordInput
 id postCaption
@@ -85,6 +84,7 @@ id signUpTitle
 id textView1
 id textView2
 id textView3
+id user
 id username
 layout activity_account_settings
 layout activity_add_caption

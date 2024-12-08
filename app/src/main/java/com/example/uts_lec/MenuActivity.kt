@@ -20,7 +20,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
-import com.google.firebase.database.*
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.io.File
 
 class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
@@ -30,65 +34,43 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
     private val REQUEST_IMAGE_CAPTURE = 101
     private lateinit var photoFile: File
 
-    // Tambahkan view untuk post image dan caption
     private lateinit var postImageView: ImageView
     private lateinit var postCaptionView: TextView
     private lateinit var profileImage: ImageView
 
-    // Firebase Database reference
     private lateinit var databaseRef: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Tautkan layout XML
         setContentView(R.layout.activity_menu)
 
-        // Inisialisasi GestureDetector untuk mendeteksi swipe
-        gestureDetector = GestureDetector(this, this)
-
-        // Referensi ke postImageView dan postCaptionView untuk menampilkan gambar dan caption
+        // Inisialisasi elemen UI
         postImageView = findViewById(R.id.postImage)
         postCaptionView = findViewById(R.id.postCaption)
-        profileImage = findViewById(R.id.overlay_image)
+        profileImage = findViewById(R.id.overlay_image) // Pastikan Anda memiliki TextView untuk username
 
-        // Firebase Database Reference
         databaseRef = FirebaseDatabase.getInstance().getReference("posts")
+        auth = FirebaseAuth.getInstance()
 
-        // Tambahkan log untuk debugging
-        Log.d("MenuActivity", "Checking for new posts...")
+        // Panggil loadUserData setelah inisialisasi elemen UI
+        loadUserData()
 
-        // Ambil data dari Firebase dan tampilkan di MenuActivity
-        loadPostsFromFirebase()
-
-        // Referensi ke Gambar Profil
         profileImage.setOnClickListener {
-            // Arahkan ke ProfilePageActivity
             val intent = Intent(this, ProfilePageActivity::class.java)
             startActivity(intent)
         }
 
-        // Cek apakah ada URI gambar yang dikirim dari ProfilePageActivity
-        intent.getStringExtra("imageUri")?.let { uriString ->
-            val imageUri: Uri = Uri.parse(uriString)
-            Glide.with(this)
-                .load(imageUri)
-                .into(profileImage)
-        }
-
-        // Referensi ke Tombol Everyone
         val everyoneButton: Button = findViewById(R.id.everyoneButton)
         everyoneButton.setOnClickListener {
             Toast.makeText(this, "Everyone button clicked!", Toast.LENGTH_SHORT).show()
         }
 
-        // Referensi ke Ikon Pesan
         val messageIcon: View = findViewById(R.id.messageIcon)
         messageIcon.setOnClickListener {
             Toast.makeText(this, "Message Icon Clicked!", Toast.LENGTH_SHORT).show()
         }
 
-        // Referensi ke input pesan dan tombol kirim pesan
         val messageInput: EditText = findViewById(R.id.messageInput)
         val sendMessageIcon: View = findViewById(R.id.sendMessageIcon)
 
@@ -101,51 +83,29 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
                 Toast.makeText(this, "Pesan tidak boleh kosong!", Toast.LENGTH_SHORT).show()
             }
         }
-
-        val image1 = findViewById<ImageView>(R.id.image1)
-        val image2 = findViewById<ImageView>(R.id.image2)
-        val image3 = findViewById<ImageView>(R.id.image3)
-
-        image1.setOnClickListener {
-            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
-        }
-
-        image2.setOnClickListener {
-            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
-        }
-
-        image3.setOnClickListener {
-            Toast.makeText(this, "Emoji Icon Clicked!", Toast.LENGTH_SHORT).show()
-        }
     }
 
-    // Fungsi untuk mengambil data dari Firebase Realtime Database
-    private fun loadPostsFromFirebase() {
-        databaseRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                // Ambil semua data dari node "posts"
-                for (postSnapshot in snapshot.children) {
-                    val post = postSnapshot.getValue(Post::class.java)
-                    if (post != null) {
-                        // Gunakan Glide untuk menampilkan gambar dengan placeholder dan error handling
-                        Glide.with(this@MenuActivity)
-                            .load(post.imageUrl)
-                            .placeholder(R.drawable.placeholder) // Gambar placeholder saat loading
-                            .error(R.drawable.error_placeholder) // Gambar default jika error
-                            .into(postImageView)
-
-                        // Set caption
-                        postCaptionView.text = post.caption
-                    } else {
-                        Log.e("MenuActivity", "Post data is null")
+    private fun loadUserData() {
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            val userRef = FirebaseDatabase.getInstance().getReference("users").child(userId)
+            userRef.get().addOnSuccessListener { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    val user = dataSnapshot.getValue(User::class.java)
+                    user?.let {
+                        // Memuat gambar profil jika tersedia
+                        if (it.profileImageUrl != null) {
+                            Glide.with(this)
+                                .load(it.profileImageUrl)
+                                .apply(RequestOptions().transform(CircleCrop()))
+                                .into(profileImage)
+                        }
                     }
                 }
+            }.addOnFailureListener {
+                Toast.makeText(this, "Gagal memuat data pengguna", Toast.LENGTH_SHORT).show()
             }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.e("MenuActivity", "Database error: ${error.message}")
-            }
-        })
+        }
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -161,7 +121,6 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         if (e1 == null) return false
 
         val diffX = e2.x - e1.x
-        Log.d("MenuActivity", "Fling detected: diffX = $diffX")
         if (diffX > 50) {
             checkCameraPermission()
             return true
@@ -189,10 +148,8 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == REQUEST_CAMERA_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            // Izin kamera diberikan, buka kamera
             openCamera()
         } else {
-            // Izin kamera ditolak
             Toast.makeText(this, "Izin kamera diperlukan untuk mengambil gambar", Toast.LENGTH_SHORT).show()
         }
     }
@@ -227,7 +184,6 @@ class MenuActivity : ComponentActivity(), GestureDetector.OnGestureListener {
     ): Boolean = true
     override fun onLongPress(e: MotionEvent) {}
 
-    // Buat class model Post untuk menyimpan data dari Firebase
     data class Post(
         val imageUrl: String = "",
         val caption: String = ""

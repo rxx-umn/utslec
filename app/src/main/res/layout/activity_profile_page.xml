@@ -27,7 +27,6 @@
             android:layout_marginBottom="24dp"/>
     </LinearLayout>
 
-    <!-- Profile Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,64 +41,26 @@
             android:scaleType="centerCrop"
             android:layout_marginEnd="16dp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="left">
-
-            <TextView
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/editProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Edit Profile"
-                android:textColor="#f1f1f1"
-                android:textSize="16sp"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="16dp"/>
-
-    <!-- TextViews untuk menampilkan data pengguna -->
     <TextView
-        android:id="@+id/nameTextView"
+        android:id="@+id/editProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name: "
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/emailTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: "
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/birthdayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Birthday: "
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"/>
+        android:text="Edit Profile"
+        android:textColor="#f1f1f1"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="4dp"/>
 
     <View
         android:layout_width="match_parent"
