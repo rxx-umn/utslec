@@ -40,16 +40,28 @@
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_add_caption.xml.flat",
-        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_add_caption.xml"
+        "merged": "com.example.uts_lec.app-debug-64:/layout_fragment_messages.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/layout/fragment_messages.xml"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-64:/layout_activity_dmlist.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_dmlist.xml"
     },
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_signup.xml.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_signup.xml"
     },
     {
+        "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\layout_activity_add_caption.xml.flat",
+        "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\layout\\activity_add_caption.xml"
+    },
+    {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_ic_cancel.png.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\ic_cancel.png"
+    },
+    {
+        "merged": "com.example.uts_lec.app-debug-64:/layout_item_message.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/layout/item_message.xml"
     },
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_ic_back_arrow.png.flat",
@@ -124,6 +136,10 @@
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\glass_button.xml"
     },
     {
+        "merged": "com.example.uts_lec.app-debug-64:/layout_activity_dm_activity_list.xml.flat",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_dm_activity_list.xml"
+    },
+    {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -194,10 +210,6 @@
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\drawable_ic_message.png.flat",
         "source": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-main-66:\\drawable\\ic_message.png"
-    },
-    {
-        "merged": "com.example.uts_lec.app-debug-64:/layout_activity_menu.xml.flat",
-        "source": "com.example.uts_lec.app-main-66:/layout/activity_menu.xml"
     },
     {
         "merged": "C:\\Users\\Izdihar Dhawy Tasdid\\.gradle\\daemon\\8.7\\com.example.uts_lec.app-debug-64:\\font_sora.ttf.flat",

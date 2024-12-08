@@ -39,6 +39,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.Utslec" >
         <activity
+            android:name="com.example.uts_lec.kiminActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uts_lec.DMActivityList"
+            android:exported="false" />
+        <activity
             android:name="com.example.uts_lec.AccountSettingsActivity"
             android:exported="false" />
         <activity
