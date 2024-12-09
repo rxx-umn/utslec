@@ -1,11 +1,6 @@
 R_DEF: Internal format may change without notice
 local
 color black
-color purple_200
-color purple_500
-color purple_700
-color teal_200
-color teal_700
 color white
 drawable camera
 drawable circle_shape
@@ -14,6 +9,7 @@ drawable edit_text_background
 drawable error_placeholder
 drawable gift
 drawable glass_button
+drawable glass_button_shaped
 drawable gradient_background
 drawable gradientbackgorund
 drawable ic_api
@@ -107,6 +103,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string project_id
 style CustomTextAppearance
+style Theme.EditAccountActivity
 style Theme.MenuActivity
 style Theme.ProfilePageActivity
 style Theme.SignIn
