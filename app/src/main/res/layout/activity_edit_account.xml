@@ -36,9 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:textColor="#DDffffff"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
+        android:textColor="#000000"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
         android:text="Alex"
         android:layout_marginBottom="10dp"/>
 
@@ -47,10 +47,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Birthday: 01/12/2000"
-        android:textColor="#ddffffff"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
         android:layout_marginBottom="10dp"/>
 
     <TextView
@@ -58,21 +58,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email: alex@ushare.umn.ac.id"
-        android:textColor="#ddffffff"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
+        android:layout_marginBottom="30dp"/>
 
     <EditText
         android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Change Password"
-        android:textColor="#ddffffff"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
+        android:textColor="#000000"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
         android:inputType="textPassword"
         android:layout_marginBottom="10dp"/>
 
@@ -81,18 +80,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
-        android:textColor="#ddffffff"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_edittext"
-        android:padding="10dp"
+        android:textColor="#000000"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
         android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
         android:layout_marginTop="20dp"
-        style="@style/CustomButtonStyle"
-        android:textColor="#ddffffff"/>
+        android:background="@drawable/glass_button_shaped"
+        android:text="Save"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

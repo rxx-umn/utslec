@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:gravity="start"
     android:background="@drawable/gradient_background"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:weightSum="1">
 
     <View
         android:layout_width="0dp"
@@ -20,7 +21,6 @@
             android:id="@+id/backButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
-
             android:src="@drawable/ic_back_arrow"
             android:layout_gravity="start"
             android:scaleX="-1"
@@ -42,6 +42,10 @@
             android:scaleType="centerCrop"
             android:layout_marginEnd="16dp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
@@ -50,20 +54,21 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"/>
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/editProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile"
-        android:textColor="#f1f1f1"
-        android:textSize="16sp"
-        android:clickable="true"
-        android:focusable="true"
-        android:paddingLeft="15dp"
-        android:color="#6E6E6E"
-        android:layout_marginTop="4dp"/>
+            <TextView
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textColor="#f1f1f1"
+                android:textSize="16sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -71,22 +76,26 @@
 
     <Button
         android:id="@+id/friendsButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-
-        android:layout_gravity="center"
-        style="@style/CustomButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Friends"
-        android:textColor="#EEffffff" />
+        android:layout_gravity="center"
+        android:background="@drawable/glass_button_shaped"
+        android:textColor="#FFFFFF" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 
     <Button
         android:id="@+id/settingsButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:text="Settings"
-        android:textColor="#EEffffff"
+        android:background="@drawable/glass_button_shaped"
+        android:textColor="#FFF6EF"
         android:layout_gravity="center"
         android:textStyle="bold"
-        style="@style/CustomButtonStyle"
         android:layout_marginTop="10dp"/>
 </LinearLayout>

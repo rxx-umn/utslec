@@ -12,4 +12,5 @@
     <item name="image2" type="id" />
     <item name="image3" type="id" />
     <item name="sendMessageIcon" type="id" />
+    <item name="messageListView" type="id" />
 </resources>
