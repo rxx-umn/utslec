@@ -28,10 +28,20 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC7wIIB29FBSc5NQQRZ0BRuoSrl3weeOi8</string>
     <string name="google_storage_bucket" translatable="false">ushare-80df0.appspot.com</string>
     <string name="project_id" translatable="false">ushare-80df0</string>
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+    </style>
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#805A4E4E</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.MyButton</item>
+    </style>
     <style name="CustomTextAppearance" parent="TextAppearance.AppCompat">
         
         <item name="android:fontFamily">@font/sora</item>
         <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="ShapeAppearance.MyButton" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
     </style>
     <style name="Theme.MenuActivity" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:textAppearance">@style/CustomTextAppearance</item>
@@ -45,7 +55,7 @@
     <style name="Theme.SignUp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:textAppearance">@style/CustomTextAppearance</item>
     </style>
-    <style name="Theme.Utslec" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Utslec" parent="Theme.MaterialComponents.NoActionBar">
         
         <item name="android:textAppearance">@style/CustomTextAppearance</item>
     </style>
