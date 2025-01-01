@@ -21,10 +21,17 @@ class ProfilePageActivity : AppCompatActivity() {
 
     private lateinit var databaseRef: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private lateinit var backButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_profile_page)
+
+        backButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
 
         username = findViewById(R.id.username)
         profileImage = findViewById(R.id.profileImage)

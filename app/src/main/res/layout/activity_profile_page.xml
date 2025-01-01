@@ -20,6 +20,7 @@
             android:id="@+id/backButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
+
             android:src="@drawable/ic_back_arrow"
             android:layout_gravity="start"
             android:scaleX="-1"
@@ -60,6 +61,8 @@
         android:textSize="16sp"
         android:clickable="true"
         android:focusable="true"
+        android:paddingLeft="15dp"
+        android:color="#6E6E6E"
         android:layout_marginTop="4dp"/>
 
     <View
@@ -68,25 +71,22 @@
 
     <Button
         android:id="@+id/friendsButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/glass_button"
-        android:text="Friends"
-        android:textColor="#ffffff" />
-
-    <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"/>
+        android:layout_height="60dp"
+
+        android:layout_gravity="center"
+        style="@style/CustomButtonStyle"
+        android:text="Friends"
+        android:textColor="#EEffffff" />
 
     <Button
         android:id="@+id/settingsButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:text="Settings"
-        android:background="@drawable/glass_button"
-        android:textColor="#FFF6EF"
+        android:textColor="#EEffffff"
         android:layout_gravity="center"
         android:textStyle="bold"
+        style="@style/CustomButtonStyle"
         android:layout_marginTop="10dp"/>
 </LinearLayout>

@@ -2,4 +2,15 @@
     <style name="roundedImage">
         <item name="cornerSize">28dp</item>
     </style>
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#805A4E4E</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.MyButton</item>
+    </style>
+
+    <style name="ShapeAppearance.MyButton" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+    </style>
 </resources>
