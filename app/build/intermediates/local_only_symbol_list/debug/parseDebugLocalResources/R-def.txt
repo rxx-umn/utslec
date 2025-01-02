@@ -84,7 +84,6 @@ id signUpTitle
 id textView1
 id textView2
 id textView3
-id user
 id username
 layout activity_account_settings
 layout activity_add_caption

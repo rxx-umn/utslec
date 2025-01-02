@@ -3648,7 +3648,6 @@ int id uniform 0x7f090217
 int id unlabeled 0x7f090218
 int id up 0x7f090219
 int id useLogo 0x7f09021a
-int id user 0x7f09021b
 int id username 0x7f09021c
 int id vertical 0x7f09021d
 int id vertical_only 0x7f09021e

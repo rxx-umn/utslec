@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:layout_marginBottom="38dp"
+<<<<<<< HEAD
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingVertical="8dp">
@@ -26,12 +27,27 @@
             <!-- Gambar Profil Lingkaran -->
             <ImageView
                 android:id="@+id/user"
+=======
+        android:orientation="horizontal"
+        android:paddingLeft="8dp">
+
+        <FrameLayout
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="start">
+
+            <ImageView
+                android:id="@+id/circle_shape"
+>>>>>>> TEST-1
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/circle_shape"
                 android:scaleType="centerCrop" />
 
+<<<<<<< HEAD
             <!-- Gambar Overlay di Atas Lingkaran -->
+=======
+>>>>>>> TEST-1
             <ImageView
                 android:id="@+id/overlay_image"
                 android:layout_width="40dp"
@@ -42,6 +58,7 @@
                 android:layout_gravity="center"/>
         </FrameLayout>
 
+<<<<<<< HEAD
         <!-- Tombol Everyone -->
         <Button
             android:id="@+id/everyoneButton"
@@ -54,11 +71,52 @@
             android:textSize="18dp"
             android:textColor="#FFFFFF"
             android:textAllCaps="false"/>
+=======
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" /> <!-- Ruang di kiri -->
+
+                <Button
+                    android:id="@+id/everyoneButton"
+                    android:layout_width="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/roundbutton"
+                    android:text="Everyone"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </FrameLayout>
+>>>>>>> TEST-1
 
         <FrameLayout
             android:layout_width="40dp"
             android:layout_height="40dp"
+<<<<<<< HEAD
             android:layout_marginStart="8dp">
+=======
+            android:layout_gravity="end">
+>>>>>>> TEST-1
 
             <View
                 android:id="@+id/messageIcon"
@@ -75,6 +133,10 @@
         </FrameLayout>
     </LinearLayout>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> TEST-1
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="300dp"
@@ -119,8 +181,13 @@
 
         <!-- Kontainer untuk EditText dan Gambar -->
         <LinearLayout
+<<<<<<< HEAD
             android:layout_width="325dp"
             android:layout_height="48dp"
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+>>>>>>> TEST-1
             android:background="@drawable/roundbutton"
             android:orientation="horizontal"
             android:gravity="center_vertical"
@@ -129,14 +196,29 @@
             <!-- Kolom Pesan -->
             <EditText
                 android:id="@+id/messageInput"
+<<<<<<< HEAD
                 android:layout_width="0dp"
+=======
+                android:layout_width="wrap_content"
+>>>>>>> TEST-1
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:hint="Send message..."
                 android:textColorHint="#B3FFF6EF"
+<<<<<<< HEAD
                 android:paddingLeft="18dp"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
+=======
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@null"
+                android:padding="8dp"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+>>>>>>> TEST-1
 
             <!-- Gambar yang bisa ditekan - Ikon 1 -->
             <ImageView
@@ -167,6 +249,7 @@
                 android:layout_marginStart="8dp"
                 android:clickable="true"
                 android:focusable="true"/>
+<<<<<<< HEAD
         </LinearLayout>
 
         <!-- Tombol Kirim -->
@@ -190,3 +273,27 @@
         </FrameLayout>
     </LinearLayout>
 </RelativeLayout>
+=======
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp">
+
+                <View
+                    android:id="@+id/sendMessageIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_shape" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_send"
+                    app:tint="#FFFFFF"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+>>>>>>> TEST-1
