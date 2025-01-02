@@ -35,7 +35,6 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Utslec" >
         <activity
             android:name="com.example.uts_lec.AccountSettingsActivity"

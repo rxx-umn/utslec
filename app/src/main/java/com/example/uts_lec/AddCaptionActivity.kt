@@ -1,10 +1,13 @@
 package com.example.uts_lec
 
+import android.content.ContentValues
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -12,13 +15,17 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.UploadTask
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.IOException
 import java.util.*
 
 class AddCaptionActivity : ComponentActivity() {
@@ -32,16 +39,15 @@ class AddCaptionActivity : ComponentActivity() {
 
     // Firebase Storage & Database
     private val storageRef = FirebaseStorage.getInstance().reference
-    val databaseRef = FirebaseDatabase.getInstance().getReference("posts")
+    private val databaseRef = FirebaseDatabase.getInstance().getReference("posts")
 
-
-    private var imageUri: Uri? = null
     private lateinit var imageBitmap: Bitmap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_caption)
 
+        // Firebase Connection Log
         FirebaseDatabase.getInstance().getReference("posts")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -53,109 +59,107 @@ class AddCaptionActivity : ComponentActivity() {
                 }
             })
 
-        // Inisialisasi komponen
+        // Initialize views
         captionText = findViewById(R.id.captionText)
-        Log.d("AddCaptionActivity", "captionText initialized successfully.")
-
         capturedImageView = findViewById(R.id.capturedImageView)
-        Log.d("AddCaptionActivity", "capturedImageView initialized: $capturedImageView")
-
         progressBar = findViewById(R.id.progressBar)
-        Log.d("AddCaptionActivity", "progressBar initialized: $progressBar")
-
         cancelButton = findViewById(R.id.cancelButton)
-        Log.d("AddCaptionActivity", "cancelButton initialized: $cancelButton")
-
         sendButton = findViewById(R.id.sendButton)
-        Log.d("AddCaptionActivity", "sendButton initialized: $sendButton")
-
         saveButton = findViewById(R.id.saveButton)
-        Log.d("AddCaptionActivity", "saveButton initialized: $saveButton")
 
-
-        // Ambil gambar path dari intent
+        // Capture Image Path
         val imagePath = intent.getStringExtra("capturedImagePath") ?: ""
         Log.d("AddCaptionActivity", "imagePath: $imagePath")
         if (imagePath.isNotEmpty()) {
             val imageFile = File(imagePath)
-            imageBitmap = BitmapFactory.decodeFile(imageFile.absolutePath) // Decode file menjadi Bitmap
+            imageBitmap = BitmapFactory.decodeFile(imageFile.absolutePath) // Decode file to Bitmap
             capturedImageView.setImageBitmap(imageBitmap)
         }
 
-        // Tombol Cancel
+        // Cancel Button
         cancelButton.setOnClickListener {
-            finish() // Kembali ke halaman sebelumnya
+            finish() // Return to previous activity
         }
 
-        // Tombol Save
+        // Save Button (Save Image to Gallery)
         saveButton.setOnClickListener {
-            saveImageToGallery(imageBitmap)
-            Toast.makeText(this, "Gambar disimpan!", Toast.LENGTH_SHORT).show()
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                saveImageToGallery(imageBitmap)
+                Toast.makeText(this, "Image saved to gallery!", Toast.LENGTH_SHORT).show()
+            } else {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                    200
+                )
+            }
         }
 
-        // Tombol Send
+        // Send Button (Upload Image to Firebase)
         sendButton.setOnClickListener {
             val caption = captionText.text.toString().trim()
             if (caption.isNotEmpty()) {
                 Log.d("AddCaptionActivity", "Caption: $caption")
                 uploadImageToFirebase(imageBitmap, caption)
             } else {
-                Toast.makeText(this, "Tambahkan caption terlebih dahulu!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please add a caption first!", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
+    // Upload Image to Firebase
     private fun uploadImageToFirebase(image: Bitmap, caption: String) {
-        // Tampilkan progress bar saat upload dimulai
+        // Show progress bar when upload starts
         progressBar.visibility = View.VISIBLE
 
-        // Konversi Bitmap ke byte array
+        // Convert Bitmap to byte array
         val baos = ByteArrayOutputStream()
         image.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val imageData = baos.toByteArray()
 
-        // Buat nama file gambar berdasarkan UUID
+        // Create a unique image name
         val imageName = UUID.randomUUID().toString()
-        val imageRef = storageRef.child("images/$imageName.jpg")
+        val imageRef = storageRef.child("post_images/$imageName.jpg")
 
-        Log.d("AddCaptionActivity", "Uploading image to Firebase Storage: $imageName")
-
-        // Unggah gambar ke Firebase Storage
+        // Upload image to Firebase Storage
         val uploadTask = imageRef.putBytes(imageData)
         uploadTask.addOnSuccessListener {
-            // Ambil URL dari gambar yang diunggah
+            // Get download URL of uploaded image
             imageRef.downloadUrl.addOnSuccessListener { uri ->
                 Log.d("AddCaptionActivity", "Image URL retrieved successfully: $uri")
-
-                saveDataToDatabase(uri.toString(), caption) // Simpan data ke database
+                saveDataToDatabase(uri.toString(), caption) // Save data to database
             }.addOnFailureListener { exception ->
-                progressBar.visibility = View.GONE // Sembunyikan progress bar jika gagal
+                progressBar.visibility = View.GONE // Hide progress bar if failed
                 Log.e("AddCaptionActivity", "Failed to get download URL: ${exception.message}")
-                Toast.makeText(this, "Gagal mengambil URL gambar: ${exception.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to get image URL: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener { exception ->
-            progressBar.visibility = View.GONE // Sembunyikan progress bar jika gagal
+            progressBar.visibility = View.GONE // Hide progress bar if failed
             Log.e("AddCaptionActivity", "Failed to upload image: ${exception.message}")
-            Toast.makeText(this, "Gagal mengunggah gambar: ${exception.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed to upload image: ${exception.message}", Toast.LENGTH_SHORT).show()
         }.addOnCompleteListener {
             Log.d("AddCaptionActivity", "Upload complete")
         }
     }
 
-
+    // Save data to Firebase Database
     private fun saveDataToDatabase(imageUrl: String, caption: String) {
         val dataMap = hashMapOf(
             "imageUrl" to imageUrl,
             "caption" to caption
         )
 
-        val newPostRef = databaseRef.push() // Tambahkan log untuk memeriksa apakah ini berhasil
+        val newPostRef = databaseRef.push() // Add log to check if this is successful
         newPostRef.setValue(dataMap).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Log.d("AddCaptionActivity", "Data saved successfully to Firebase Realtime Database: $imageUrl")
-                Toast.makeText(this, "Gambar dan caption berhasil diunggah!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Image and caption uploaded successfully!", Toast.LENGTH_SHORT).show()
 
-                // Arahkan ke MenuActivity setelah berhasil
+                // Navigate to MenuActivity after successful upload
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.putExtra("imageUrl", imageUrl)
                 intent.putExtra("caption", caption)
@@ -163,15 +167,43 @@ class AddCaptionActivity : ComponentActivity() {
                 finish()
             } else {
                 Log.e("AddCaptionActivity", "Failed to save data to Firebase: ${task.exception?.message}")
-                Toast.makeText(this, "Gagal menyimpan data ke database: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to save data to database: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener { exception ->
             Log.e("AddCaptionActivity", "Error saving data: ${exception.message}")
-            Toast.makeText(this, "Gagal menyimpan data: ${exception.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed to save data: ${exception.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
+    // Save Image to Gallery
     private fun saveImageToGallery(image: Bitmap) {
-        // Implementasi penyimpanan ke galeri
+        // Create a ContentValues object to store image metadata
+        val contentValues = ContentValues().apply {
+            put(MediaStore.Images.Media.TITLE, "captured_image_${UUID.randomUUID()}")
+            put(MediaStore.Images.Media.DESCRIPTION, "Captured Image")
+            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+        }
+
+        // Insert the content values into MediaStore and get the URI
+        val imageUri = this.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+        // Check if the imageUri is not null before proceeding
+        imageUri?.let { uri ->
+            try {
+                // Open an output stream for the image URI
+                val outputStream = contentResolver.openOutputStream(uri)
+
+                // Check if outputStream is not null
+                outputStream?.let { stream ->
+                    // Compress and save the bitmap to the output stream
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+                    stream.flush()
+                    stream.close()
+                    Log.d("AddCaptionActivity", "Image saved to gallery successfully")
+                }
+            } catch (e: IOException) {
+                Log.e("AddCaptionActivity", "Error saving image to gallery: ${e.message}")
+            }
+        }
     }
 }

@@ -1,42 +1,38 @@
 [
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_account_settings.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_account_settings.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signup.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_signup.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_add_friend.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_add_friend.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_edit_account.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_edit_account.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_edit_account.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_edit_account.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_menu.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_menu.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_add_caption.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_add_caption.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_add_caption.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_add_caption.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_menu.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_menu.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_account_settings.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_account_settings.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_profile_page.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_profile_page.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signin.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_signin.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_main.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_main.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_main.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_main.xml"
     },
     {
         "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_profile_page.xml",
         "source": "com.example.uts_lec.app-main-66:/layout/activity_profile_page.xml"
     },
     {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signin.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_signin.xml"
-    },
-    {
-        "merged": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_signup.xml",
-        "source": "/Users/samuelkimin/.gradle/daemon/8.7/com.example.uts_lec.app-main-66:/layout/activity_signup.xml"
+        "merged": "com.example.uts_lec.app-mergeDebugResources-63:/layout/activity_add_friend.xml",
+        "source": "com.example.uts_lec.app-main-66:/layout/activity_add_friend.xml"
     }
 ]
