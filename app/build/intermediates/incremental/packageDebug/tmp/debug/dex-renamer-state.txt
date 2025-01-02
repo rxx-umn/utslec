@@ -1,4 +1,4 @@
-#Thu Jan 02 00:20:56 WIB 2025
+#Thu Jan 02 20:29:07 WIB 2025
 base.0=/Users/samuelkimin/Documents/GitHub/utslec/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/samuelkimin/Documents/GitHub/utslec/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/samuelkimin/Documents/GitHub/utslec/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex

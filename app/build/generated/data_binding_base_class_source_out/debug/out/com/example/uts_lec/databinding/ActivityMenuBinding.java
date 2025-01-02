@@ -25,6 +25,9 @@ public final class ActivityMenuBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final ImageView circleShape;
+
+  @NonNull
   public final Button everyoneButton;
 
   @NonNull
@@ -57,16 +60,14 @@ public final class ActivityMenuBinding implements ViewBinding {
   @NonNull
   public final View sendMessageIcon;
 
-  @NonNull
-  public final ImageView user;
-
-  private ActivityMenuBinding(@NonNull RelativeLayout rootView, @NonNull Button everyoneButton,
-      @NonNull ImageView image1, @NonNull ImageView image2, @NonNull ImageView image3,
-      @NonNull View messageIcon, @NonNull EditText messageInput,
+  private ActivityMenuBinding(@NonNull RelativeLayout rootView, @NonNull ImageView circleShape,
+      @NonNull Button everyoneButton, @NonNull ImageView image1, @NonNull ImageView image2,
+      @NonNull ImageView image3, @NonNull View messageIcon, @NonNull EditText messageInput,
       @NonNull LinearLayout messageLayout, @NonNull ImageView overlayImage,
       @NonNull TextView postCaption, @NonNull ShapeableImageView postImage,
-      @NonNull View sendMessageIcon, @NonNull ImageView user) {
+      @NonNull View sendMessageIcon) {
     this.rootView = rootView;
+    this.circleShape = circleShape;
     this.everyoneButton = everyoneButton;
     this.image1 = image1;
     this.image2 = image2;
@@ -78,7 +79,6 @@ public final class ActivityMenuBinding implements ViewBinding {
     this.postCaption = postCaption;
     this.postImage = postImage;
     this.sendMessageIcon = sendMessageIcon;
-    this.user = user;
   }
 
   @Override
@@ -108,6 +108,12 @@ public final class ActivityMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.circle_shape;
+      ImageView circleShape = ViewBindings.findChildViewById(rootView, id);
+      if (circleShape == null) {
+        break missingId;
+      }
+
       id = R.id.everyoneButton;
       Button everyoneButton = ViewBindings.findChildViewById(rootView, id);
       if (everyoneButton == null) {
@@ -174,15 +180,9 @@ public final class ActivityMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.user;
-      ImageView user = ViewBindings.findChildViewById(rootView, id);
-      if (user == null) {
-        break missingId;
-      }
-
-      return new ActivityMenuBinding((RelativeLayout) rootView, everyoneButton, image1, image2,
-          image3, messageIcon, messageInput, messageLayout, overlayImage, postCaption, postImage,
-          sendMessageIcon, user);
+      return new ActivityMenuBinding((RelativeLayout) rootView, circleShape, everyoneButton, image1,
+          image2, image3, messageIcon, messageInput, messageLayout, overlayImage, postCaption,
+          postImage, sendMessageIcon);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
